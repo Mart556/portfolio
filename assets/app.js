@@ -1,48 +1,53 @@
-$(function () {
-    let lastScrolledY = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const Year = new Date().getFullYear();
+    document.querySelector('.copyright-footer').innerHTML = `Mart Haamer &copy; ${Year}`;
 
-    $(window).on('beforeunload', function () {
-        $('body').hide();
-        $(window).scrollTop(0);
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            navbar.classList.add('animate__animated', 'animate__fadeOutUp');
+        } else {
+            navbar.classList.remove('animate__fadeOutUp');
+            navbar.classList.add('animate__fadeInDown');
+        }
+        lastScrollTop = scrollTop;
     });
 
+    const profileImage = document.getElementById('profileImage');
+    let timeout;
 
-    $(window).bind("scroll", function () {
-        $('.fade-in-section').each(function (i) {
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-            if (bottom_of_window > bottom_of_object) {
-                $(this).animate({ 'opacity': '1' }, 500).addClass('animate__fadeInUp');
-            }
-        })
-
-        if (lastScrolledY > $(this).scrollTop()) {
-            let $nav = $('.navbar');
-            if ($nav.hasClass('animate__fadeOutUp')) {
-                $nav.removeClass('animate__fadeOutUp').addClass('animate__fadeInDown')
-            }
-        } else {
-            let $nav = $('.navbar');
-            if (!$nav.hasClass('animate__fadeOutUp')) {
-                $nav.addClass('animate__fadeOutUp')
-            }
+    profileImage.addEventListener('mousedown', function() {
+        if (profileImage.classList.contains('animate__shakeX') || profileImage.classList.contains('animate__bounce') || profileImage.src.includes('pilt-2.jpg')) {
+            return;
         }
 
-        lastScrolledY = $(this).scrollTop();
+        timeout = setTimeout(() => {
+            profileImage.classList.remove('animate__shakeX');
+            profileImage.style.setProperty('--animate-duration', '1s');
+
+            profileImage.classList.add('animate__animated', 'animate__wobble');
+            profileImage.style.cursor = 'default';
+            profileImage.src = 'assets/pilt-2.jpg';
+        }, 5000);
+
+        profileImage.classList.add('animate__animated', 'animate__shakeX');
+        profileImage.style.setProperty('--animate-duration', '5s');
+
+        profileImage.style.cursor = 'wait';
     });
-})
 
-$('.form-button').click(function () {
-    $(this).addClass('animate__animated animate__rubberBand');
-    setTimeout(() => {
-        $(this).removeClass('animate__rubberBand');
-    }, 2000)
-})
+    profileImage.addEventListener('mouseup', function() {
+        clearTimeout(timeout);
+        profileImage.style.cursor = 'default';
+        profileImage.classList.remove('animate__shakeX');
+    });
 
-$('.side-link i').hover(function () {
-    $(this).addClass('animate__animated animate__pulse');
-    setTimeout(() => {
-        $(this).removeClass('animate__pulse');
-    }, 2000)
-})
+    profileImage.addEventListener('mouseleave', function() {
+        clearTimeout(timeout);
+        profileImage.style.cursor = 'default';
+        profileImage.classList.remove('animate__shakeX');
+    });
+});

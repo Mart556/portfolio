@@ -1,303 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-59TX45WZ29"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        <title>Portfolio</title>
 
-        gtag('config', 'G-59TX45WZ29');
-    </script>
+        <link rel="stylesheet" href="assets/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        />
 
-    <link rel="stylesheet" href="assets/style.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="icon" type="image/x-icon" href="assets/logo.png" />
+    </head>
 
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
-    <link rel="icon" type="image/x-icon" href="assets/logo.png">
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg animate__animated sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand ms-3" href="#homePage"><img src="assets/logo.png" width="23%" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end p-2" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#aboutPage">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skillsPage">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projectsPage">Projects</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contactsPage">Contacts</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div id="homePage" class="container" style="margin-top: 15vh;">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h5 class="m-0 p-2" style="font-size: 1.5rem;">Hi, my name is</h5>
-            </div>
-            <div class="col-md-12 text-center m-0">
-                <h1 class="m-0 p-2" style="font-size: 5.6rem; font-weight: bold; font-family: 'Inter', 'sans-serif';">
-                    Mart Haamer.</h1>
-            </div>
-            <div class="col-md-12 text-center">
-                <p style="font-size: 1.3rem; font-weight: bold;">/Junior Software Developer/</h1>
-            </div>
-        </div>
-    </div>
-
-    <div id="aboutPage" class="container fade-in-section animate__animated">
-        <div class="row">
-            <div class="col-md-1" style="width: max-content;">
-                <h2 class="page-header m-0">About Me</h2>
-            </div>
-
-            <div class="col-md-3">
-                <hr style="	margin-top: 7% !important;">
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class="col-md-6">
-                <div class="row justify-content-center">
-                    <div class="col-md-12 mt-2 text-font">
-                        <p>My name is Mart and I'm currently 19 years old and studying to be a junior software developer
-                            at
-                            Tartu Vocational School.
-                            I chose this profession because I have always been interested in computers since I went to
-                            primary
-                            school and after graduating I tried my hand at coding. When I have some free time I usually
-                            sit at
-                            the computer and play with code and try to learn new things, but I also play football and
-                            work out.
-                        </p>
-
-                    </div>
-
-                    <div class="col-md-12 text-start">
-                        <h4>Education</h4>
-                    </div>
-
-                    <div class="col-md-12 text-start">
-                        <ol>
-                            <li>
-                                Elva Põhikool | 2010 - 2019;
-                            </li>
-                            <li>
-                                Rõngu Keskkool | 2019 - 2022;
-                            </li>
-
-                            <li>
-                                Tartu Vocational School | 2022 -
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-2">
-
-            </div>
-
-            <div class="col-md-4">
-                <img src="assets/pilt-1.jpg" class="rounded img-fluid about-img p-0 m-0" style="width: 100%;"
-                    alt="Mart">
-            </div>
-        </div>
-    </div>
-
-    <div id="projectsPage" class="container fade-in-section animate__animated">
-        <div class="row">
-            <div class="col-md-1" style="width: max-content;">
-                <h2 class="page-header m-0">Projects</h2>
-            </div>
-
-            <div class="col-md-3">
-                <hr style="	margin-top: 7% !important;">
-            </div>
-        </div>
-
-        <div class="row mt-3 justify-content-center">
-            <div class="col-md-4">
-                <div class="project-box rounded">
-                    <div class="row">
-                        <div class="col-md-3 col-3">
-                            <i class="fa-regular fa-folder fs-2"></i>
-                        </div>
-
-                        <div class="col-md-6 col-6 text-center">
-                            <h5 class="m-0 fs-4">Books Project</h5>
-                        </div>
-
-                        <div class="col-md-3 col-3 text-end">
-                            <a title='Github' href="https://github.com/marthaamer/books" target="_blank"
-                                class="side-link"><i class="fa-brands fa-github" style="font-size: 30px;"></i></a>
-                        </div>
-
-                        <div class="w-100">
-                            <hr>
-                        </div>
-
-                        <div class="col-md-12">
-                            <p class="project-description fs-5">This is a small project made in school about adding
-                                books to
-                                a table.</p>
-                        </div>
-
-                        <div class="col-md-12">
-                            <p class="m-0 fs-6">JavaScript, HTML, CSS</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="skillsPage" class="container fade-in-section animate__animated">
-        <div class="row text-center">
-            <div class="col-md-12 mb-2">
-                <h2 style="font-size: 2.5rem;">Skills</h2>
-                <hr>
-            </div>
-
-            <div class="col-md-3 col-4">
-                <i class="fa-brands fa-css3-alt" style="font-size: 7em;"></i>
-            </div>
-
-            <div class="col-md-3 col-4">
-                <i class="fa-brands fa-html5" style="font-size:7em;"></i>
-            </div>
-
-            <div class="col-md-3 col-4">
-                <i class="fa-brands fa-js" style="font-size:7em;"></i>
-            </div>
-            <div class="col-md-3 col-4">
-                <i class="fa-brands fa-bootstrap" style="font-size:7em;"></i>
-            </div>
-        </div>
-    </div>
-
-    <div id="contactsPage" class="container fade-in-section animate__animated">
-        <div class="row justify-content-center">
-            <div class="col-md-12 text-center">
-                <h2 style="font-size: 3rem;">Get In Touch</h2>
-            </div>
-            <div class="col-md-5 mt-3">
-                <p class="text-font-sm text-center">
-                    Although I`m studying in school and cannot do any work at the moment, my inbox is always open for
-                    any questions. That said I will try to get back to you as fast as possible.
-                </p>
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class="col-md-3 text-center mt-2">
-                <a href="mailto:mart.haamer@voco.ee" rel="noopener noreferrer" target="_blank" class="form-button">
-                    Contact Me
+    <body>
+        <nav class="navbar navbar-expand-md animate__animated">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-3" href="#homePage">
+                    <img src="assets/logo.png" width="20%" alt="Logo" />
                 </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle"
+                >
+                    <span class="navbar-toggler-icon text-white"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarNavDropdown"
+                >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutPage">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projectsPage"
+                                >Projects</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactsPage"
+                                >Contacts</a
+                            >
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+
+        <section
+            id="homePage"
+            style="height: calc(100vh - 75px)"
+            class="container"
+        >
+            <div class="row text-center align-items-center h-100">
+                <div class="col-12">
+                    <h2 class="m-0">Hi, my name is</h2>
+
+                    <h1
+                        class="m-0 my-3"
+                        style="
+                            font-size: 5.6rem;
+                            font-weight: bold;
+                            font-family: 'Inter', 'sans-serif';
+                        "
+                    >
+                        Mart Haamer.
+                    </h1>
+
+                    <h5 class="m-0">/Junior Software Developer/</h5>
+                </div>
+            </div>
+        </section>
+
+        <section id="aboutPage" class="container">
+            <div class="row align-self-center">
+                <div class="col-md-1" style="width: max-content">
+                    <h2 class="page-header m-0">About Me</h2>
+                </div>
+
+                <div class="col-md-3">
+                    <hr style="margin-top: 7% !important" />
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-md-6">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 my-2 text-font">
+                            <p>
+                                My name is Mart and I'm currently 21 years old
+                                and studying to be a junior software developer
+                                at Tartu Vocational School. I chose this
+                                profession because I have always been interested
+                                in computers since I went to primary school and
+                                after graduating I tried my hand at coding. When
+                                I have some free time I usually sit at the
+                                computer and play with code and try to learn new
+                                things, but I also play football and work out.
+                            </p>
+                        </div>
+
+                        <div class="col-md-12 text-start">
+                            <div class="about-sub-header">
+                                <h4>Education</h4>
+                                <hr />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-start">
+                            <ul class="education-list">
+                                <li>Rõngu Keskkool | 2019 - 2022</li>
+                                <li>Tartu Vocational College | 2024 ∞</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-12 text-start">
+                            <div class="about-sub-header">
+                                <h4>Skills</h4>
+                                <hr />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-start">
+                            <ul class="skills-list">
+                                <li>
+                                    <i class="fa-brands fa-html5 me-2"></i>HTML
+                                </li>
+                                <li>
+                                    <i class="fa-brands fa-css3 me-2"></i>CSS
+                                </li>
+                                <li>
+                                    <i class="fa-brands fa-js me-2"></i
+                                    >JavaScript
+                                </li>
+                                <li>
+                                    <i class="fa-brands fa-bootstrap me-2"></i
+                                    >Bootstrap
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2"></div>
+
+                <div class="col-md-4">
+                    <img
+                        id="profileImage"
+                        src="assets/mart.png"
+                        class="rounded img-fluid about-img p-0 m-0"
+                        style="width: 100%"
+                        alt="Mart"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <section id="projectsPage" class="container">
+            <div class="row">
+                <div class="col-md-1" style="width: max-content">
+                    <h2 class="page-header m-0">Projects</h2>
+                </div>
+
+                <div class="col-md-3">
+                    <hr style="margin-top: 7% !important" />
+                </div>
+            </div>
+
+            <div class="row mt-3 justify-content-center">
+                <div class="col-md-4">
+                    <div class="project-box rounded">
+                        <div class="row">
+                            <div class="col-md-3 col-3">
+                                <i class="fa-solid fa-folder fs-2"></i>
+                            </div>
+
+                            <div class="col-md-6 col-6 text-center">
+                                <h5 class="m-0 fs-4">Books Project</h5>
+                            </div>
+
+                            <div class="col-md-3 col-3 text-end">
+                                <a
+                                    title="Github"
+                                    href="https://github.com/marthaamer/books"
+                                    target="_blank"
+                                    class="side-link"
+                                    ><i
+                                        class="fa-brands fa-github"
+                                        style="font-size: 30px"
+                                    ></i
+                                ></a>
+                            </div>
+
+                            <div class="w-100">
+                                <hr />
+                            </div>
+
+                            <div class="col-md-12">
+                                <p class="project-description fs-5">
+                                    This is a small project made in school about
+                                    adding books to a table.
+                                </p>
+                            </div>
+
+                            <div class="col-md-12">
+                                <p class="m-0 fs-6">JavaScript, HTML, CSS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contactsPage" class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <h2 style="font-size: 3rem">Get In Touch</h2>
+                </div>
+                <div class="col-md-5 mt-3">
+                    <p class="text-font-sm text-center">
+                        Although I`m studying in school and cannot do any work
+                        at the moment, my inbox is always open for any
+                        questions. That said I will try to get back to you as
+                        fast as possible.
+                    </p>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-md-3 text-center mt-2">
+                    <a
+                        href="mailto:mart.haamer@voco.ee"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        class="form-button"
+                    >
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div
+            id="leftMenu"
+            class="position-fixed"
+            style="bottom: 0; margin-left: 3%"
+        >
+            <ol style="list-style: none; padding: 0">
+                <li>
+                    <a
+                        title="Github"
+                        href="https://github.com/Mart556"
+                        target="_blank"
+                        class="side-link"
+                        ><i
+                            class="fa-brands fa-github"
+                            style="font-size: 28px"
+                        ></i
+                    ></a>
+                </li>
+
+                <li class="mt-3">
+                    <a
+                        title="Facebook"
+                        href="https://www.facebook.com/profile.php?id=100009769663826"
+                        target="_blank"
+                        class="side-link"
+                        ><i
+                            class="fa-brands fa-facebook"
+                            style="font-size: 28px"
+                        ></i
+                    ></a>
+                </li>
+
+                <li class="mt-3">
+                    <a
+                        title="Steam"
+                        href="https://steamcommunity.com/id/martwasowski/"
+                        target="_blank"
+                        class="side-link"
+                        ><i
+                            class="fa-brands fa-steam"
+                            style="font-size: 28px"
+                        ></i
+                    ></a>
+                </li>
+            </ol>
+
+            <div class="vl-left"></div>
         </div>
-    </div>
 
-    <div id="leftMenu" class="position-fixed" style="bottom: 0; margin-left: 3%;">
-        <ol style="list-style: none; padding: 0;">
-            <li>
-                <a title='Github' href="https://github.com/marthaamer" target="_blank" class="side-link"><i
-                        class="fa-brands fa-github" style="font-size: 28px;"></i></a>
-            </li>
+        <div
+            id="rightMenu"
+            class="position-fixed"
+            style="bottom: 0; right: 0; margin-right: 3%"
+        >
+            <a href="mailto:mart.haamer@voco.ee" class="side-link"
+                >mart.haamer@voco.ee</a
+            >
 
-            <li class="mt-3">
-                <a title='Facebook' href="https://www.facebook.com/profile.php?id=100009769663826" target="_blank"
-                    class="side-link"><i class="fa-brands fa-facebook" style="font-size: 28px;"></i></a>
-            </li>
+            <div class="vl-right"></div>
+        </div>
 
-            <li class="mt-3">
-                <a title='Steam' href="https://steamcommunity.com/id/Marth123/" target="_blank" class="side-link"><i
-                        class="fa-brands fa-steam" style="font-size: 28px;"></i></a>
-            </li>
-        </ol>
-
-        <div class="vl-left"></div>
-    </div>
-
-
-    <div id="rightMenu" class="position-fixed" style="bottom: 0; right: 0; margin-right: 3%;">
-        <a href="mailto:mart.haamer@voco.ee" class="side-link">mart.haamer@voco.ee</a>
-
-        <div class="vl-right"></div>
-    </div>
-
-    <footer>
-        <div class="container sticky-bottom mt-5">
+        <footer class="container-fluid mt-5">
             <div class="row justify-content-center text-center">
-
-
                 <div class="col-2 mobile-view">
-                    <a title='Steam' href="https://steamcommunity.com/id/Marth123/" target="_blank" class="side-link"><i
-                            class="fa-brands fa-steam" style="font-size: 30px;"></i></a>
+                    <a
+                        title="Steam"
+                        href="https://steamcommunity.com/id/martwasowski/"
+                        target="_blank"
+                        class="side-link"
+                        ><i
+                            class="fa-brands fa-steam"
+                            style="font-size: 30px"
+                        ></i
+                    ></a>
                 </div>
 
                 <div class="col-2 mobile-view">
-                    <a title='Github' href="https://github.com/marthaamer" target="_blank" class="side-link"><i
-                            class="fa-brands fa-github" style="font-size: 30px;"></i></a>
+                    <a
+                        title="Github"
+                        href="https://github.com/Mart556"
+                        target="_blank"
+                        class="side-link"
+                        ><i
+                            class="fa-brands fa-github"
+                            style="font-size: 30px"
+                        ></i
+                    ></a>
                 </div>
 
                 <div class="col-2 mobile-view">
-                    <a title='Facebook' href="https://www.facebook.com/profile.php?id=100009769663826" target="_blank"
-                        class="side-link"><i class="fa-brands fa-facebook" style="font-size: 30px;"></i></a>
+                    <a
+                        title="Facebook"
+                        href="https://www.facebook.com/profile.php?id=100009769663826"
+                        target="_blank"
+                        class="side-link"
+                        ><i
+                            class="fa-brands fa-facebook"
+                            style="font-size: 30px"
+                        ></i
+                    ></a>
                 </div>
 
                 <div class="col-2 mobile-view">
-                    <a title='Email' href="mailto:mart.haamer@voco.ee" target="_blank" class="side-link"><i
-                            class="fa-solid fa-envelope" style="font-size: 30px;"></i></a>
+                    <a
+                        title="Email"
+                        href="mailto:mart.haamer@voco.ee"
+                        target="_blank"
+                        class="side-link"
+                        ><i
+                            class="fa-solid fa-envelope"
+                            style="font-size: 30px"
+                        ></i
+                    ></a>
                 </div>
-
 
                 <div class="col-md-12 mt-2">
-                    <p class="fs-5">Mart Haamer &copy; 2022</p>
+                    <p class="copyright-footer fs-5"></p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script async defer src="assets/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-        crossorigin="anonymous"></script>
-</body>
-
+        <script src="assets/app.js"></script>
+    </body>
 </html>
