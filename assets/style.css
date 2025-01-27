@@ -1,5 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 body {
   color: #5bc0be !important;
@@ -10,21 +8,20 @@ body {
   font-style: normal;
 }
 
-/* @keyframes appear {
-	0% {
-		opacity: 0;
-		transform: scale(0.5);
-	}
-
-	90% {
-		opacity: 1;
-		transform: scale(1);
-	}
-} */
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .container {
-  /* 	animation: appear 1s linear;
-  	animation-timeline: scroll();
-  	animation-range: entry 0%; */
+  animation: appear 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0%;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -84,33 +81,31 @@ p {
   bottom: 0;
 }
 
-.side-link i:hover {
-  color: #5bc0be;
-}
-
 .side-link {
   text-decoration: none;
   color: #5bc0be;
+}
+.side-link:hover {
+  color: #6fffe9;
+  transition: 0.5s;
+  transform: translateY(-2px);
 }
 
 #rightMenu a {
   writing-mode: vertical-rl;
   margin-bottom: 15px;
 }
-
 #rightMenu a:hover {
-  color: #5bc0be;
+  color: #6fffe9;
   transition: 0.5s;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
-/* ------------ */
 hr {
   border-radius: 5px;
   border: 2px solid #6fffe9 !important;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar-thumb {
   background-color: rgb(28, 37, 65);
   border: 3px solid #0b132b;
@@ -147,14 +142,25 @@ hr {
   }
 }
 .project-box {
-  padding: 20px;
-  background-color: rgb(28, 37, 65);
   border: 2px solid rgb(28, 37, 65);
+  background-color: rgba(28, 37, 65, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  max-height: 300px;
+  transition: border 0.5s;
 }
-
 .project-box:hover {
   border: 2px solid #6fffe9;
-  transition: all 1s;
+}
+.project-box:hover .project-box-title {
+  color: #6fffe9;
+}
+
+.project-description {
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .form-control {
@@ -247,7 +253,7 @@ a {
   border: 2px solid rgb(28, 37, 65);
   background-color: rgb(28, 37, 65);
   color: #5bc0be;
-  width: 20% !important;
+  width: 30% !important;
 }
 .show-more-btn:hover {
   background-color: rgba(111, 255, 233, 0.8);
