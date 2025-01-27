@@ -42,7 +42,7 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-md animate__animated">
+        <nav class="navbar navbar-expand-md animate__animated sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand ms-3" href="#homePage">
                     <img src="assets/logo.png" width="20%" alt="Logo" />
@@ -92,16 +92,14 @@
 
                     <h1
                         class="m-0 my-3"
-                        style="
-                            font-size: 5.6rem;
-                            font-weight: bold;
-                            font-family: 'Inter', 'sans-serif';
-                        "
+                        style="font-size: 5.6rem; font-weight: bold"
                     >
                         Mart Haamer.
                     </h1>
 
-                    <h5 class="m-0">/Junior Software Developer/</h5>
+                    <h5 class="home-animated-header animate__animated m-0">
+                        /Junior Software Developer/
+                    </h5>
                 </div>
             </div>
         </section>
@@ -201,48 +199,10 @@
                 </div>
             </div>
 
-            <div class="row mt-3 justify-content-center">
-                <div class="col-md-4">
-                    <div class="project-box rounded">
-                        <div class="row">
-                            <div class="col-md-3 col-3">
-                                <i class="fa-solid fa-folder fs-2"></i>
-                            </div>
+            <div class="row mt-3 projects-container"></div>
 
-                            <div class="col-md-6 col-6 text-center">
-                                <h5 class="m-0 fs-4">Books Project</h5>
-                            </div>
-
-                            <div class="col-md-3 col-3 text-end">
-                                <a
-                                    title="Github"
-                                    href="https://github.com/marthaamer/books"
-                                    target="_blank"
-                                    class="side-link"
-                                    ><i
-                                        class="fa-brands fa-github"
-                                        style="font-size: 30px"
-                                    ></i
-                                ></a>
-                            </div>
-
-                            <div class="w-100">
-                                <hr />
-                            </div>
-
-                            <div class="col-md-12">
-                                <p class="project-description fs-5">
-                                    This is a small project made in school about
-                                    adding books to a table.
-                                </p>
-                            </div>
-
-                            <div class="col-md-12">
-                                <p class="m-0 fs-6">JavaScript, HTML, CSS</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row mt-5 justify-content-center">
+                <button type="button" class="show-more-btn">Show More</button>
             </div>
         </section>
 
