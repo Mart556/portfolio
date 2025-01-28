@@ -142,13 +142,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <hr />
                 </div>
 
-                <div class="col-md-12">
-                    <p class="project-description fs-5">
+                <div class="col-12 col-md-12">
+                    <p class="project-description fs-6">
                         ${project.description}
                     </p>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-12 col-md-12">
                     <p class="m-0 fs-6">${project.tools}</p>
                 </div>
             </div>

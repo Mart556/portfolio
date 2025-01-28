@@ -147,7 +147,7 @@ hr {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   max-height: 300px;
-  transition: border 0.5s;
+  transition: all 0.5s;
 }
 .project-box:hover {
   border: 2px solid #6fffe9;

@@ -164,13 +164,14 @@ hr {
 	background-color: rgba($backgroundColor-2, 0.8);
 	backdrop-filter: blur(5px);
     max-height: 300px;
-    transition: border 0.5s;
+	transition: all 0.5s;
 
     &:hover {
         border: 2px solid $color-3;
-
+	
         .project-box-title {
             color: $color-3;
+			
         }
     }
 }
