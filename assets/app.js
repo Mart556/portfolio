@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const animatedHeader = document.querySelector('.home-animated-header');
-    const texts = ['/Junior Software Developer/', 'I build things for the web...'];
+    const texts = ['/Junior Software Developer/', 'I build things for the web..', '🐧'];
     let currentTextIndex = 0;
     let charIndex = 0;
 
