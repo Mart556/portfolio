@@ -158,8 +158,8 @@ hr {
   animation: fadeInLeft 1s forwards;
 }
 .project-box:hover {
-  border: 2px solid rgba(111, 255, 233, 0.8);
-  transition: all 0.5s;
+  border: 2px solid rgba(111, 255, 233, 0.5);
+  transition: all 1s;
 }
 .project-box:hover .project-box-title {
   color: #6fffe9;
@@ -282,6 +282,11 @@ a {
   color: rgb(28, 37, 65);
   transition: all 0.5s;
   font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .show-more-btn {
+    width: 50% !important;
+  }
 }
 
 @keyframes fadeInLeft {

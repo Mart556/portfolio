@@ -178,8 +178,8 @@ hr {
     animation: fadeInLeft 1s forwards;
 
     &:hover {
-        border: 2px solid rgba($color-3, 0.8);
-        transition: all 0.5s;
+        border: 2px solid rgba($color: $color-3, $alpha: 0.5);
+        transition: all 1s;
 
         .project-box-title {
             color: $color-3;
@@ -310,6 +310,10 @@ a {
         color: $backgroundColor-2;
         transition: all 0.5s;
         font-weight: bold;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 50% !important;
     }
 }
 
