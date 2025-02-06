@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         lastScrollTop = scrollTop;
     });
 
-    const profileImage = document.getElementById("profileImage");
+    /* const profileImage = document.getElementById("profileImage");
     let timeout;
 
     profileImage.addEventListener("mousedown", function () {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearTimeout(timeout);
         profileImage.style.cursor = "default";
         profileImage.classList.remove("animate__shakeX");
-    });
+    }); */
 
     const animatedHeader = document.querySelector(".home-animated-header");
     const texts = [
