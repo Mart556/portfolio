@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ".copyright-footer"
     ).innerHTML = `Mart Haamer &copy; ${Year}`;
 
-    let lastScrollTop = 0;
+    /*let lastScrollTop = 0;
     const navbar = document.querySelector(".navbar");
 
     window.addEventListener("scroll", function () {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         lastScrollTop = scrollTop;
-    });
+    });*/
 
     /* const profileImage = document.getElementById("profileImage");
     let timeout;
