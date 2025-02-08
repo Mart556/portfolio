@@ -32,11 +32,8 @@
             referrerpolicy="no-referrer"
         />
 
-        <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-            as="style"
-        />
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
         <link rel="preload" href="assets/bootstrap.min.css" as="style" />
         <link rel="stylesheet" href="assets/bootstrap.min.css" />
@@ -134,11 +131,12 @@
                     <div class="row justify-content-center">
                         <div class="col-md-12 my-2 text-font">
                             <p>
-                                My name is Mart and I'm currently 21 years old
-                                and studying to be a junior software developer
-                                at Tartu Vocational College. I chose this
-                                profession because I have always been interested
-                                in computers since I went to primary school and
+                                My name is Mart and I'm currently
+                                <span id="myAge"></span> years old and studying
+                                to be a junior software developer at Tartu
+                                Vocational College. I chose this profession
+                                because I have always been interested in
+                                computers since I went to primary school and
                                 after graduating I tried my hand at coding.
                                 <br />
                                 When I have some free time I usually sit at the
@@ -160,8 +158,8 @@
 
                         <div class="col-md-12 text-start">
                             <ul class="education-list">
-                                <li>Rõngu Keskkool | 2019 - 2022</li>
                                 <li>Tartu Vocational College | 2024 ∞</li>
+                                <li>Rõngu Keskkool | 2019 - 2022</li>
                             </ul>
                         </div>
 
@@ -178,7 +176,8 @@
                                     <i class="fa-brands fa-html5 me-2"></i>HTML
                                 </li>
                                 <li>
-                                    <i class="fa-brands fa-css3 me-2"></i>CSS
+                                    <i class="fa-brands fa-css3 me-2"></i
+                                    >CSS/SCSS
                                 </li>
                                 <li>
                                     <i class="fa-brands fa-js me-2"></i
@@ -187,6 +186,10 @@
                                 <li>
                                     <i class="fa-brands fa-bootstrap me-2"></i
                                     >Bootstrap
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-database me-2"></i
+                                    >MariaDB/MySQL
                                 </li>
                             </ul>
                         </div>
@@ -210,7 +213,7 @@
         <section id="projectsPage" class="container">
             <div class="row">
                 <div class="col-md-1" style="width: max-content">
-                    <h2 class="page-header m-0 ms-2">Projects</h2>
+                    <h2 class="page-header m-0 ms-2">Featured Projects</h2>
                 </div>
 
                 <div class="col-md-3">
@@ -316,8 +319,11 @@
             class="position-fixed"
             style="bottom: 0; right: 0; margin-right: 3%"
         >
-            <a href="mailto:mart.haamer@voco.ee" class="side-link"
-                >mart.haamer@voco.ee</a
+            <a
+                href="/assets/mart_haamer_cv.pdf"
+                target="_blank"
+                class="side-link"
+                >Link to the CV</a
             >
 
             <div class="vl-right"></div>

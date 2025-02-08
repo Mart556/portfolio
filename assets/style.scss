@@ -4,22 +4,32 @@ $textColor: #5bc0be;
 $color-2: #5bc0be;
 $color-3: #6fffe9;
 
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
 
 body {
     color: $textColor !important;
     background-color: $backgroundColor !important;
-
-    font-family: "Rubik", serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
 
     background: radial-gradient(
         circle at 50% 50%,
         $backgroundColor-2 -40%,
         $backgroundColor 20%
     );
+
+    cursor: url("./hammer-cursor.png"), auto;
 }
 
 @keyframes appear {
@@ -233,10 +243,10 @@ a {
 .about-sub-header {
     display: flex;
     align-items: center;
+    text-align: start;
 
     h4 {
-        margin-right: 1rem;
-        min-width: 100px;
+        min-width: 125px;
     }
 
     hr {
