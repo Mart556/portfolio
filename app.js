@@ -98,28 +98,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     type();
 
-    let lastClickTime = 0;
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
-    document.body.addEventListener("click", function (event) {
-        const currentTime = new Date().getTime();
-        if (currentTime - lastClickTime < 1000) {
-            return;
-        }
-        lastClickTime = currentTime;
+    if (!isMobile) {
+        let lastClickTime = 0;
 
-        const hammerSmashGif = document.createElement("img");
-        hammerSmashGif.src = "assets/hammer-smash.gif";
-        hammerSmashGif.style.position = "absolute";
-        hammerSmashGif.style.left = `${event.pageX}px`;
-        hammerSmashGif.style.top = `${event.pageY}px`;
-        hammerSmashGif.style.width = "32px";
-        hammerSmashGif.style.height = "32px";
-        document.body.appendChild(hammerSmashGif);
+        document.body.addEventListener("click", function (event) {
+            const currentTime = new Date().getTime();
+            if (currentTime - lastClickTime < 1000) {
+                return;
+            }
+            lastClickTime = currentTime;
 
-        setTimeout(() => {
-            hammerSmashGif.remove();
-        }, 1000);
-    });
+            const hammerSmashGif = document.createElement("img");
+            hammerSmashGif.src = "assets/hammer-smash.gif";
+            hammerSmashGif.style.position = "absolute";
+            hammerSmashGif.style.left = `${event.pageX}px`;
+            hammerSmashGif.style.top = `${event.pageY}px`;
+            hammerSmashGif.style.width = "32px";
+            hammerSmashGif.style.height = "32px";
+            document.body.appendChild(hammerSmashGif);
+
+            setTimeout(() => {
+                hammerSmashGif.remove();
+            }, 1000);
+        });
+    }
 
     const Projects = [
         {
