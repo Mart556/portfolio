@@ -156,6 +156,12 @@ hr {
     visibility: hidden;
   }
 }
+.main-header-text {
+  font-size: 5.6rem;
+  font-weight: bold;
+  font-display: swap;
+}
+
 .project-box {
   border: 2px solid rgb(28, 37, 65);
   background-color: rgba(28, 37, 65, 0.5);
