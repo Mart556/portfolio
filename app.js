@@ -123,70 +123,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const Projects = [
         {
-            title: "Project 1",
+            title: "Webshop",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
+                "Alien-themed webshop, complete with a cart system and admin view! This project was brought to life by a dedicated team of three as part of a school assignment.",
+            tools: "fa-html5 fa-css3-alt fa-database fa-js",
+            gitLink: "https://github.com/robinristo78/web-shop",
         },
 
         {
-            title: "Project 2",
+            title: "To-Do App",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
-        },
-
-        {
-            title: "Project 3",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
-        },
-
-        {
-            title: "Project 4",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
-        },
-        {
-            title: "Project 5",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
-        },
-        {
-            title: "Project 6",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
-        },
-        {
-            title: "Project 7",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
-        },
-        {
-            title: "Project 8",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
-        },
-        {
-            title: "Project 9",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at quam nec dolor tincidunt tincidunt. Donec nec erat nec ligula vehicula accumsan. Nullam auctor, turpis nec vehicula aliquam",
-            tools: "fa-html5 fa-css3-alt fa-js",
-            gitLink: "#",
+                "A simple To-Do app with a clean and minimalistic design. The app allows you to add, delete and filter tasks.",
+            tools: "fa-html5 fa-css3-alt fa-vuejs",
+            gitLink: "https://github.com/Mart556/lopuprojekt_v1",
         },
     ];
 
@@ -197,8 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let projectTools = ``;
 
         project.tools.split(" ").forEach((tool) => {
+            const toolClass = tool === "fa-database" ? "fa-solid" : "fa-brands";
             projectTools += `<div class="col-2">
-                <i class="fa-brands ${tool} fs-4"></i>
+            <i class="${toolClass} ${tool} fs-4"></i>
             </div>`;
         });
 
@@ -208,50 +158,54 @@ document.addEventListener("DOMContentLoaded", function () {
             randomFolderState = "-closed";
         } */
 
-        projectElement.innerHTML = `<div class="p-3 rounded m-2 project-box">	
+        projectElement.innerHTML = `<div class="p-3 rounded m-2 project-box d-flex flex-column justify-content-between" style="height: 100%;">	
+            <div>
             <div class="row mb-3">
-            <div class="col-md-3 col-3">
-               <i class="fa-regular fa-folder${randomFolderState} fs-2"></i>
-            </div>
+                <div class="col-md-3 col-3">
+                <i class="fa-regular fa-folder${randomFolderState} fs-2"></i>
+                </div>
 
-            <div class="col-md-6 col-6 text-center">
+                <div class="col-md-6 col-6 text-center">
                 <h5 class="m-0 fs-4 project-box-title">${project.title}</h5>
-            </div>
+                </div>
 
-            <div class="col-md-3 col-3 text-end">
+                <div class="col-md-3 col-3 text-end">
                 <a
-                title="Github"
-                href="${project.gitLink}"
-                target="_blank"
-                class="side-link"
-                ><i
+                    title="Github"
+                    href="${project.gitLink}"
+                    target="_blank"
+                    class="side-link"
+                    >
+                    <i
                     class="fa-brands fa-github"
                     style="font-size: 30px"
-                ></i
-                ></a>
-            </div>
+                    >
+                    </i>
+                </a>
+                </div>
             </div>
 
-            <div class="w-100 mb-3">
-            <hr />
+            <div class="w-100">
+                <hr />
             </div>
 
             <div class="row mb-3">
-            <div class="col-12 col-md-12">
-                <p class="project-description fs-6">
+                <div class="col-12 col-md-12">
+                <p class="project-description fs-6 m-0">
                 ${project.description}
                 </p>
+                </div>
             </div>
             </div>
 
-            <div class="row">
-                <div class="col-12 col-md-12">
-                    <div class="d-flex project-tools">
-                        <div class="row" style="gap: 5px;">
-                            ${projectTools}
-                        </div>
-                    </div>
+            <div class="row mt-auto">
+            <div class="col-12 col-md-12">
+                <div class="d-flex project-tools">
+                <div class="row" style="gap: 5%;">
+                    ${projectTools}
                 </div>
+                </div>
+            </div>
             </div>
         </div>`;
 
@@ -275,17 +229,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const showMoreBtn = document.getElementById("showMore");
     const projectsContainer = document.querySelector(".projects-container");
 
+    // Hide the button by default
+    if (showMoreBtn) {
+        showMoreBtn.style.display = "none";
+    }
+
     function loadProjects(projects) {
         projects.forEach((project, index) => {
             setTimeout(() => {
                 let projectElement = createProject(project);
                 projectsContainer.appendChild(projectElement);
 
-                if (
-                    (index === projects.length - 1 &&
-                        showMoreBtn.style.display === "") ||
-                    showMoreBtn.style.display == undefined
-                ) {
+                // Only show the button after loading if there are more than 6 projects total
+                if (index === projects.length - 1 && Projects.length > 6) {
                     setTimeout(() => {
                         showMoreBtn.style.display = "inline-block";
                         showMoreBtn.classList.add(
@@ -310,8 +266,12 @@ document.addEventListener("DOMContentLoaded", function () {
             loadProjects(additionalProjects);
             showMoreBtn.style.display = "none";
         });
+    } else {
+        // If there are 6 or fewer projects, make sure the button is hidden
+        if (showMoreBtn) {
+            showMoreBtn.style.display = "none";
+        }
     }
-
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
