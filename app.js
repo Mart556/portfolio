@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createProject(project) {
         const projectElement = document.createElement("div");
-        projectElement.classList.add("col-md-4", "col-12", "col-sm-6");
+        projectElement.classList.add("col-md-4", "col-12", "py-2");
 
         let projectTools = ``;
 
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
             randomFolderState = "-closed";
         } */
 
-        projectElement.innerHTML = `<div class="p-3 rounded m-2 project-box d-flex flex-column justify-content-between" style="height: 100%;">	
+        projectElement.innerHTML = `<div class="p-3 rounded m-2 project-box">	
             <div>
             <div class="row mb-3">
                 <div class="col-md-3 col-3">
