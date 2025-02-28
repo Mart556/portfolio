@@ -141,6 +141,14 @@ document.addEventListener("DOMContentLoaded", function () {
             tools: "fa-html5 fa-css3-alt fa-vuejs",
             gitLink: "https://github.com/Mart556/lopuprojekt_v1",
         },
+        
+        {
+            title: "Weather App",
+            description:
+                "App that allows user to search for any Estonian city and view its current weather. The app utilizes the OpenWeather API for retrieving weather data, with the frontend built using EJS.",
+            tools: "fa-html5 fa-css3-alt fa-js",
+            gitLink: "https://github.com/Mart556/weather_express",
+        },
     ];
 
     function createProject(project) {
