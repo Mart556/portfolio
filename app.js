@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Weather App",
             description:
-                "App that allows user to search for any Estonian city and view its current weather. The app utilizes the OpenWeather API for retrieving weather data, with the frontend built using EJS.",
+                "App that allows user to search for any Estonian city and view its current weather. The app utilizes the OpenWeather API for retrieving weather data.",
             tools: "fa-html5 fa-css3-alt fa-js",
             gitLink: "https://github.com/Mart556/weather_express",
         },
