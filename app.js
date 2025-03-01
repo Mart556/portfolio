@@ -10,60 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const age = Math.abs(ageDate.getUTCFullYear() - 1970);
     document.getElementById("myAge").innerHTML = age;
 
-    /*let lastScrollTop = 0;
-    const navbar = document.querySelector(".navbar");
-
-    window.addEventListener("scroll", function () {
-        let scrollTop = document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > 1000) {
-            navbar.classList.add("animate__animated", "animate__fadeOutUp");
-        } else if (scrollTop < lastScrollTop) {
-            navbar.classList.remove("animate__fadeOutUp");
-            navbar.classList.add("animate__fadeInDown");
-        }
-
-        lastScrollTop = scrollTop;
-    });*/
-
-    /* const profileImage = document.getElementById("profileImage");
-    let timeout;
-
-    profileImage.addEventListener("mousedown", function () {
-        if (
-            profileImage.classList.contains("animate__shakeX") ||
-            profileImage.classList.contains("animate__bounce") ||
-            profileImage.src.includes("pilt-2.jpg")
-        ) {
-            return;
-        }
-
-        timeout = setTimeout(() => {
-            profileImage.classList.remove("animate__shakeX");
-            profileImage.style.setProperty("--animate-duration", "1s");
-
-            profileImage.classList.add("animate__animated", "animate__wobble");
-            profileImage.style.cursor = "default";
-            profileImage.src = "assets/pilt-2.jpg";
-        }, 5000);
-
-        profileImage.classList.add("animate__animated", "animate__shakeX");
-        profileImage.style.setProperty("--animate-duration", "5s");
-
-        profileImage.style.cursor = "wait";
-    });
-
-    profileImage.addEventListener("mouseup", function () {
-        clearTimeout(timeout);
-        profileImage.style.cursor = "default";
-        profileImage.classList.remove("animate__shakeX");
-    });
-
-    profileImage.addEventListener("mouseleave", function () {
-        clearTimeout(timeout);
-        profileImage.style.cursor = "default";
-        profileImage.classList.remove("animate__shakeX");
-    }); */
-
     const animatedHeader = document.querySelector(".home-animated-header");
     const texts = [
         "/Junior Software Developer/",
@@ -132,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Alien-themed webshop, complete with a cart system and admin view! This project was brought to life by a dedicated team of three as part of a school assignment.",
             tools: "fa-html5 fa-css3-alt fa-database fa-js",
             gitLink: "https://github.com/robinristo78/web-shop",
+            previewImage: "assets/webshop-preview.png",
         },
 
         {
@@ -140,18 +87,39 @@ document.addEventListener("DOMContentLoaded", function () {
                 "A simple To-Do app with a clean and minimalistic design. The app allows you to add, delete and filter tasks.",
             tools: "fa-html5 fa-css3-alt fa-vuejs",
             gitLink: "https://github.com/Mart556/lopuprojekt_v1",
+            previewImage: "assets/todo-preview.png",
         },
-        
+
         {
             title: "Weather App",
             description:
                 "App that allows user to search for any Estonian city and view its current weather. The app utilizes the OpenWeather API for retrieving weather data.",
             tools: "fa-html5 fa-css3-alt fa-js",
             gitLink: "https://github.com/Mart556/weather_express",
+            previewImage: "assets/weather-app-preview.png",
         },
     ];
 
+    function showPreview(previewImage, title) {
+        const previewModal = document.getElementById("previewModal");
+        const modalImage = document.getElementById("modalImage");
+
+        const previewModalHeader = document.getElementById("modalHeader");
+        previewModalHeader.innerHTML = "Preview of " + title;
+
+        modalImage.src = previewImage;
+        previewModal.style.display = "block";
+
+        previewModal.addEventListener("click", function () {
+            previewModal.style.display = "none";
+        });
+    }
+
+    let projectIndex = -1;
+
     function createProject(project) {
+        projectIndex++;
+
         const projectElement = document.createElement("div");
         projectElement.classList.add("col-md-4", "col-12", "py-2");
 
@@ -159,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         project.tools.split(" ").forEach((tool) => {
             const toolClass = tool === "fa-database" ? "fa-solid" : "fa-brands";
-            projectTools += `<div class="col-2">
+            projectTools += `<div class="d-flex align-items-center me-3">
             <i class="${toolClass} ${tool} fs-4"></i>
             </div>`;
         });
@@ -173,67 +141,65 @@ document.addEventListener("DOMContentLoaded", function () {
         projectElement.innerHTML = `<div class="p-3 rounded m-2 project-box">	
             <div>
             <div class="row mb-3">
-                <div class="col-md-3 col-3">
-                <i class="fa-regular fa-folder${randomFolderState} fs-2"></i>
-                </div>
+            <div class="col-md-3 col-3">
+            <i class="fa-regular fa-folder${randomFolderState} fs-2"></i>
+            </div>
 
-                <div class="col-md-6 col-6 text-center">
-                <h5 class="m-0 fs-4 project-box-title">${project.title}</h5>
-                </div>
+            <div class="col-md-6 col-6 text-center">
+            <h5 class="m-0 fs-4 project-box-title">${project.title}</h5>
+            </div>
 
-                <div class="col-md-3 col-3 text-end">
-                <a
-                    title="Github"
-                    href="${project.gitLink}"
-                    target="_blank"
-                    class="side-link"
-                    >
-                    <i
-                    class="fa-brands fa-github"
-                    style="font-size: 30px"
-                    >
-                    </i>
-                </a>
-                </div>
+            <div class="col-md-3 col-3 text-end">
+            <a
+                title="Github"
+                href="${project.gitLink}"
+                target="_blank"
+                class="side-link"
+                >
+                <i
+                class="fa-brands fa-github"
+                style="font-size: 30px"
+                >
+                </i>
+            </a>
+            </div>
             </div>
 
             <div class="w-100">
-                <hr />
+            <hr />
             </div>
 
             <div class="row mb-3">
-                <div class="col-12 col-md-12">
-                <p class="project-description fs-6 m-0">
-                ${project.description}
-                </p>
-                </div>
+            <div class="col-12 col-md-12">
+            <p class="project-description fs-6 m-0">
+            ${project.description}
+            </p>
+            </div>
             </div>
             </div>
 
-            <div class="row mt-auto">
-            <div class="col-12 col-md-12">
-                <div class="d-flex project-tools">
-                <div class="row" style="gap: 5%;">
-                    ${projectTools}
+            <div class="row mt-auto align-items-center">
+            <div class="col-6 col-md-6">
+                <div class="d-flex flex-row project-tools">
+                ${projectTools}
                 </div>
-                </div>
+            </div>
+
+            <div class="col-6 col-md-6 d-flex justify-content-end">
+                <button id="previewButton-${projectIndex}" target="_blank" class="btn-preview" ${
+            !project.previewImage ? "disabled" : ""
+        }><span>Preview</span></button>
             </div>
             </div>
         </div>`;
 
-        setTimeout(() => {
-            projectElement.addEventListener("mouseenter", function () {
-                projectElement.style.setProperty("--animate-duration", "1.0s");
-                projectElement.classList.add(
-                    "animate__animated",
-                    "animate__headShake"
-                );
-            });
+        const previewButton = projectElement.querySelector(
+            `#previewButton-${projectIndex}`
+        );
 
-            projectElement.addEventListener("mouseleave", function () {
-                projectElement.classList.remove("animate__headShake");
-            });
-        }, 500);
+        previewButton.addEventListener("click", function () {
+            showPreview(project.previewImage, project.title);
+        });
 
         return projectElement;
     }

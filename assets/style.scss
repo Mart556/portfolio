@@ -197,7 +197,7 @@ hr {
     animation: fadeInLeft 1s forwards;
 
     &:hover {
-        border: 2px solid rgba($color: $color-3, $alpha: 0.6);
+        border: 2px solid rgba($color: $color-3, $alpha: 0.3);
         transition: all 1s;
 
         .project-box-title {
@@ -208,6 +208,89 @@ hr {
         .project-tools {
             color: $color-3;
             transition: all 0.5s;
+        }
+    }
+}
+
+.btn-preview {
+    border-radius: 50px;
+    padding: 5px 10px;
+    border: 2px solid $backgroundColor-2;
+    background-color: rgba($backgroundColor-2, 0.5);
+    backdrop-filter: blur(5px);
+    color: $textColor;
+    width: max-content;
+    font-weight: 500;
+    box-shadow: inset 0 0 8px rgba($color-2, $alpha: 0.5);
+
+    &:hover {
+        background-color: rgba($color: $color-3, $alpha: 0.5);
+        color: $backgroundColor-2;
+        transition: all 0.5s;
+    }
+
+    &:disabled {
+        background-color: $backgroundColor-2;
+        color: $color-3;
+        cursor: not-allowed;
+        opacity: 0.6;
+        span {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.preview-modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba($color: $backgroundColor, $alpha: 0.8);
+}
+
+.preview-modal-content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $backgroundColor-2;
+    border: 2px solid $color-3;
+    border-radius: 10px;
+    padding: 5px 20px 20px 20px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80%;
+    overflow: auto;
+
+    .modal-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .preview-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+
+        h3 {
+            font-size: 1.5rem;
+            color: $color-3;
+            margin: 0;
+        }
+
+        .close {
+            color: $color-3;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0 10px;
         }
     }
 }
