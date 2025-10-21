@@ -1,75 +1,74 @@
-# React + TypeScript + Vite
+# 🚀 Mart Haamer - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, Vite, and Tailwind CSS. Showcasing projects, skills, and experience as a full-stack web developer.
 
-Currently, two official plugins are available:
+## 📋 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Current
 
-## React Compiler
+- ✅ **Responsive Design** - Mobile-first approach with breakpoints for all device sizes
+- ✅ **Smooth Animations** - Scroll animations and staggered project card reveals
+- ✅ **Interactive Navigation** - Fullscreen mobile menu with blur effect
+- ✅ **Projects Section** - Showcase of featured projects with GitHub and live preview links
+- ✅ **Skills Display** - Visual representation of technical skills with icons
+- ✅ **Performance Optimized** - Image optimization, lazy loading, and fast Vite builds
+- ✅ **Custom Cursor** - Hammer smash effect on desktop clicks (excluding buttons/links)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Todo / Upcoming Features
 
-Note: This will impact Vite dev & build performances.
+#### 🌙 **Dark/Light Mode**
 
-## Expanding the ESLint configuration
+- [ ] Implement theme toggle (sun/moon icon)
+- [ ] Save user preference to localStorage
+- [ ] Smooth transitions between themes
+- [ ] Update color palette for light mode
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+#### 🌍 **Multi-Language Support**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [ ] Support for Estonian (default)
+- [ ] Support for English
+- [ ] Language selector in navigation
+- [ ] Persist language choice
+- [ ] Translate all sections (About, Projects, Contact, etc.)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+#### 🎉 **Easter Eggs**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [ ] Konami code sequence (arrow keys)
+- [ ] Hidden developer message on certain key combinations
+- [ ] Special animations on specific dates
+- [ ] Secret contact methods or achievements
+- [ ] Interactive game or puzzle
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### 📧 **Contact Section**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [ ] Contact form with validation
+- [ ] Email integration (EmailJS or similar)
+- [ ] Social media links
+- [ ] Direct messaging capability
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### 🔍 **SEO & Performance**
+
+- [ ] Meta tags optimization
+- [ ] Open Graph / Twitter cards
+- [ ] Sitemap generation
+- [ ] Lighthouse score optimization
+
+#### 🎨 **UI/UX Enhancements**
+
+- [ ] Testimonials/Reviews section
+- [ ] Blog or Articles section
+- [ ] Download CV button
+- [ ] Advanced filtering for projects
+- [ ] Search functionality
+
+## 🔗 Links
+
+- **Website**: [marthaamer.ee](https://marthaamer.ee)
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+---
+
+**Last Updated**: October 2025
