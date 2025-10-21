@@ -15,13 +15,7 @@ export default defineConfig({
 		ViteImageOptimizer({
 			cache: false,
 			png: {
-				quality: 80,
-			},
-			jpeg: {
-				quality: 80,
-			},
-			jpg: {
-				quality: 80,
+				quality: 100,
 			},
 		}),
 	],

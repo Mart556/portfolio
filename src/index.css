@@ -42,5 +42,5 @@ body {
 
 	color: var(--text-color);
 
-	cursor: url("./hammer-cursor.png"), auto;
+	cursor: url("./assets/hammer-cursor.png"), auto;
 }

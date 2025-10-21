@@ -38,7 +38,7 @@ const Data: DataType[] = [
 		tools: ["html5", "css3", "database", "react"],
 		gitLink: "https://github.com/Mart556/getscambo",
 		previewImage: "/getscambo-preview.webp",
-		previewLink: "http://37.27.45.218/",
+		previewLink: "http://37.27.45.218:81",
 	},
 
 	{
@@ -134,7 +134,7 @@ const ProjectCard = ({
 	return (
 		<div
 			style={{
-				animation: isAnimated ? `slideInUp 0.6s ease-out forwards` : "none",
+				animation: isAnimated ? `slideInUp 0.4s ease-out forwards` : "none",
 				opacity: 0,
 			}}
 			className='group relative h-96 overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all duration-300'
