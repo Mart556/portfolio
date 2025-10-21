@@ -2,7 +2,7 @@ import { FaGithub, FaDev, FaLinkedin } from "react-icons/fa";
 
 const SideBars = () => {
 	return (
-		<div className='fixed inset-0 flex justify-between pointer-events-none z-10'>
+		<div className='fixed inset-0 justify-between pointer-events-none z-10 hidden md:flex'>
 			<div className='fixed left-0 bottom-0 h-full w-20 flex flex-col items-center justify-end pt-10 pointer-events-auto'>
 				<div className='flex flex-col items-center gap-5'>
 					<a

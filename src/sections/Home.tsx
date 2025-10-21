@@ -55,7 +55,9 @@ const Home = () => {
 			className='min-h-screen flex h-full flex-col items-center justify-center space-y-10'
 		>
 			<h2 className='text-4xl font-semibold text-gray-300'>Hi, my name is</h2>
-			<h1 className='text-7xl font-bold text-white'>Mart Haamer.</h1>
+			<h1 className='lg:text-7xl sm:text-6xl font-bold text-white'>
+				Mart Haamer.
+			</h1>
 			<h3
 				className={`text-3xl font-semibold text-gray-300 transition-opacity duration-1000 ${
 					isTransitioning ? "opacity-0" : "opacity-100"

@@ -44,7 +44,7 @@ const About = () => {
 			id='about'
 			className='h-full py-20 flex items-center justify-between text-white'
 		>
-			<div className='max-w-3xl p-6 space-y-6 md:max-w-xl '>
+			<div className='max-w-3xl p-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
 				<h2 className='text-4xl font-bold mb-6'>About Me</h2>
 
 				<p className='text-lg'>

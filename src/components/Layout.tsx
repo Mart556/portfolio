@@ -7,7 +7,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
 	return (
 		<div className='flex w-full'>
-			<div className='w-20 shrink-0' />
+			<div className='w-20 shrink-0 hidden md:block' />
 
 			<main
 				className='flex-1 h-full overflow-auto no-scrollbar mx-10'
@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
 				{children}
 			</main>
 
-			<div className='w-20 shrink-0' />
+			<div className='w-20 shrink-0 hidden md:block' />
 
 			<style>{`
                 .no-scrollbar::-webkit-scrollbar { display: none; }
