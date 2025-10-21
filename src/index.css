@@ -18,6 +18,16 @@
 	--text-color: #5bc0be;
 }
 
+html,
+body {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	display: none;
+}
 body {
 	margin: 0;
 	padding: 0;

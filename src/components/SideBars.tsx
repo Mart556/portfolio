@@ -39,7 +39,7 @@ const SideBars = () => {
 			<div className='fixed right-0 top-0 h-full w-20 flex flex-col items-center justify-end pt-10 pr-4 pointer-events-auto'>
 				<div className='flex flex-col items-center gap-5'>
 					<a
-						href='/assets/mart_haamer_cv.pdf'
+						href='./mart_haamer_cv.pdf'
 						download
 						className='flex items-center justify-center text-cyan-400 text-sm font-semibold tracking-widest transition-all duration-300 px-2.5 py-1.5 rounded-lg border-2 border-transparent hover:text-white hover:border-cyan-400 hover:bg-cyan-400/10 -rotate-180 origin-center'
 						title='Download CV'

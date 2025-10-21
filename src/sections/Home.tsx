@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { FaChevronDown } from "react-icons/fa";
 
 const Home = () => {
 	const [displayedText, setDisplayedText] = useState("");
@@ -49,17 +50,35 @@ const Home = () => {
 	}, [slogans]);
 
 	return (
-		<div className='flex h-full flex-col items-center justify-center space-y-10'>
-			<h2 className='text-2xl font-semibold text-gray-300'>Hi, my name is</h2>
-			<h1 className='text-4xl font-bold text-white'>Mart Haamer.</h1>
+		<div
+			id='home'
+			className='relative flex h-full flex-col items-center justify-center space-y-10'
+		>
+			<h2 className='text-4xl font-semibold text-gray-300'>Hi, my name is</h2>
+			<h1 className='text-7xl font-bold text-white'>Mart Haamer.</h1>
 			<h3
-				className={`text-2xl font-semibold text-gray-300 transition-opacity duration-1000 ${
+				className={`text-3xl font-semibold text-gray-300 transition-opacity duration-1000 ${
 					isTransitioning ? "opacity-0" : "opacity-100"
 				}`}
 			>
 				{displayedText}
 				<span className='animate-pulse'>|</span>
 			</h3>
+
+			<div className='flex'>
+				<style>{`
+					@keyframes scroll-bounce {
+						0%, 100% { transform: translateY(0); opacity: 0.7; }
+						50% { transform: translateY(8px); opacity: 1; }
+					}
+					.scroll-arrow {
+						animation: scroll-bounce 2s infinite;
+					}
+				`}</style>
+				<div className='flex flex-col items-center gap-1'>
+					<FaChevronDown className='scroll-arrow h-6 w-6 text-cyan-400/50' />
+				</div>
+			</div>
 		</div>
 	);
 };

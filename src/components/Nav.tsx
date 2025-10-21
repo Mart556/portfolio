@@ -1,5 +1,5 @@
 const Nav = () => {
-	const navItems = ["Home", "About", "Contact"];
+	const navItems = ["Home", "About", "Projects", "Contact"];
 
 	const scrollToSection = (section: string) => () => {
 		const sectionId = section.toLowerCase();
