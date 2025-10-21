@@ -2,7 +2,7 @@ import { FaGithub, FaDev, FaLinkedin, FaFileAlt } from "react-icons/fa";
 
 const Contact = () => {
 	return (
-		<div id='contact' className='h-full py-20 flex flex-col text-white'>
+		<div id='contact' className='h-full py-20 mx-10 flex flex-col text-white'>
 			<h2 className='text-4xl font-semibold mb-12'>Get in Touch</h2>
 			<p className='text-lg mb-6'>
 				I'm always open to discussing new projects, creative ideas, or

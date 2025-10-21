@@ -252,7 +252,7 @@ const Projects = () => {
 	}, [isVisible]);
 
 	return (
-		<div id='projects' className='h-full py-20 flex flex-col text-white'>
+		<div id='projects' className='h-full py-20 mx-10 flex flex-col text-white'>
 			<style>{`
 				@keyframes slideInUp {
 					from {

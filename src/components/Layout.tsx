@@ -45,8 +45,6 @@ const Layout = ({ children }: LayoutProps) => {
 		});
 	}, []);
 
-	console.log("isMobile:", isMobile);
-
 	return (
 		<div className='flex w-full'>
 			<div className={`w-20 shrink-0 ${isMobile ? "hidden" : "block"}`} />
