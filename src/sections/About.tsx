@@ -42,12 +42,12 @@ const About = () => {
 	return (
 		<div
 			id='about'
-			className='h-full py-20 flex items-center justify-between text-white'
+			className='h-full py-12 md:py-20 flex flex-col md:flex-row items-center justify-between text-white gap-8 md:gap-0'
 		>
-			<div className='max-w-3xl p-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
-				<h2 className='text-4xl font-bold mb-6'>About Me</h2>
+			<div className='max-w-3xl px-4 md:px-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
+				<h2 className='text-3xl md:text-4xl font-bold mb-6'>About Me</h2>
 
-				<p className='text-lg'>
+				<p className='text-base md:text-lg text-gray-300'>
 					I'm Mart Haamer, a passionate web developer with a knack for creating
 					dynamic and responsive web applications. With a strong foundation in
 					JavaScript and React, I enjoy bringing ideas to life through code.
@@ -62,35 +62,48 @@ const About = () => {
 					community. Let's build something amazing together!
 				</p>
 
-				<h3 className='text-2xl text-gray-300 font-bold mb-6'>Education</h3>
+				<h3 className='text-xl md:text-2xl text-gray-300 font-bold mb-6'>
+					Education
+				</h3>
 
-				<div className='flex flex-row space-x-6'>
+				<div className='flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0'>
 					{Schools.map((school, index) => (
-						<div key={index} className='space-y-2'>
-							<div className='text-cyan-400 font-semibold'>{school.year}</div>
-							<div className='text-lg'>{school.degree}</div>
-							<div className='text-gray-400'>{school.institution}</div>
+						<div key={index} className='space-y-2 flex-1'>
+							<div className='text-cyan-400 font-semibold text-sm md:text-base'>
+								{school.year}
+							</div>
+							<div className='text-base md:text-lg font-medium'>
+								{school.degree}
+							</div>
+							<div className='text-gray-400 text-sm md:text-base'>
+								{school.institution}
+							</div>
 						</div>
 					))}
 				</div>
 
-				<h3 className='text-2xl text-gray-300 font-bold mb-6'>Skills</h3>
+				<h3 className='text-xl md:text-2xl text-gray-300 font-bold mb-6'>
+					Skills
+				</h3>
 
-				<div className='grid grid-cols-2 sm:grid-cols-3 gap-4'>
+				<div className='grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4'>
 					{Skills.map((skill, index) => (
-						<div key={index} className='flex items-center space-x-2'>
+						<div
+							key={index}
+							className='flex items-center space-x-2 p-2 rounded bg-white/5 hover:bg-white/10 transition'
+						>
 							{skill.icon}
-							<span className='text-lg'>{skill.name}</span>
+							<span className='text-sm md:text-lg'>{skill.name}</span>
 						</div>
 					))}
 				</div>
 			</div>
 
-			<div className='px-6 py-20 '>
+			<div className='px-4 md:px-6 py-12 md:py-20  w-full md:w-auto flex justify-center md:block'>
 				<img
 					src='./mart.webp'
 					alt='Mart Haamer'
-					className='rounded mx-auto w-100 shadow-lg'
+					className='rounded w-80 md:w-100 shadow-lg object-cover'
 				/>
 			</div>
 		</div>

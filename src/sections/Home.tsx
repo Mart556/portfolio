@@ -54,19 +54,20 @@ const Home = () => {
 			id='home'
 			className='min-h-screen flex h-full flex-col items-center justify-center space-y-10'
 		>
-			<h2 className='text-4xl font-semibold text-gray-300'>Hi, my name is</h2>
-			<h1 className='lg:text-7xl sm:text-6xl font-bold text-white'>
+			<h2 className='text-2xl sm:text-2xl md:text-4xl font-semibold text-gray-300'>
+				Hi, my name is
+			</h2>
+			<h1 className='text-5xl sm:text-5xl md:text-7xl font-bold text-white text-nowrap'>
 				Mart Haamer.
 			</h1>
 			<h3
-				className={`text-3xl font-semibold text-gray-300 transition-opacity duration-1000 ${
+				className={`text-xl sm:text-2xl md:text-3xl font-semibold text-gray-300 transition-opacity duration-1000 ${
 					isTransitioning ? "opacity-0" : "opacity-100"
 				}`}
 			>
 				{displayedText}
 				<span className='animate-pulse'>|</span>
-			</h3>
-
+			</h3>{" "}
 			<div className='flex'>
 				<style>{`
 					@keyframes scroll-bounce {

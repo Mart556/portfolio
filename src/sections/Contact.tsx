@@ -1,4 +1,4 @@
-import { FaGithub, FaDev, FaLinkedin, FaBeer } from "react-icons/fa";
+import { FaGithub, FaDev, FaLinkedin, FaFileAlt } from "react-icons/fa";
 
 const Contact = () => {
 	return (
@@ -55,7 +55,7 @@ const Contact = () => {
 							className='flex items-center justify-center w-12 h-12 rounded-lg text-cyan-400 text-2xl transition-all duration-300 bg-cyan-400/10 border-2 border-transparent hover:text-white hover:bg-cyan-400/20 hover:border-cyan-400 hover:-translate-y-1'
 							title='CV'
 						>
-							<FaBeer />
+							<FaFileAlt />
 						</a>
 					</div>
 				</div>
