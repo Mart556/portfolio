@@ -9,6 +9,7 @@ import Layout from "./components/Layout.tsx";
 import Home from "./sections/Home.tsx";
 import About from "./sections/About.tsx";
 import Projects from "./sections/Projects.tsx";
+import Contact from "./sections/Contact.tsx";
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")!).render(
 			<Home />
 			<About />
 			<Projects />
+			<Contact />
 		</Layout>
 	</StrictMode>
 );

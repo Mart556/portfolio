@@ -52,7 +52,7 @@ const Home = () => {
 	return (
 		<div
 			id='home'
-			className='relative flex h-full flex-col items-center justify-center space-y-10'
+			className='min-h-screen flex h-full flex-col items-center justify-center space-y-10'
 		>
 			<h2 className='text-4xl font-semibold text-gray-300'>Hi, my name is</h2>
 			<h1 className='text-7xl font-bold text-white'>Mart Haamer.</h1>

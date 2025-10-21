@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
 			<div className='w-20 shrink-0' />
 
 			<main
-				className='flex-1 min-h-screen overflow-auto no-scrollbar mx-10'
+				className='flex-1 h-full overflow-auto no-scrollbar mx-10'
 				style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
 			>
 				{children}

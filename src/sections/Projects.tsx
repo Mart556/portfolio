@@ -1,39 +1,61 @@
-import { useState } from "react";
-import { FaGithub } from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
+import {
+	FaGithub,
+	FaLink,
+	FaReact,
+	FaNode,
+	FaHtml5,
+	FaCss3Alt,
+	FaDatabase,
+	FaJs,
+	FaVuejs,
+} from "react-icons/fa";
 
-const Data = [
+type DataType = {
+	title: string;
+	description: string;
+	tools: string[];
+	gitLink: string;
+	previewImage: string;
+	previewLink?: string;
+};
+
+const Data: DataType[] = [
 	{
-		title: "Alien Webshop",
+		title: "VOCO SIM",
 		description:
-			"Alien-themed webshop, complete with a cart system and admin view! This project was brought to life by a dedicated team of three as part of a school assignment.",
-		tools: "fa-html5 fa-css3-alt fa-database fa-js",
-		gitLink: "https://github.com/robinristo78/web-shop",
-		previewImage: "/webshop-preview.webp",
+			"The game was created by a team of five during a school hackathon for the school's Open Doors Day.",
+		tools: ["react", "node"],
+		gitLink: "https://github.com/ilmarIV/VOCO_SIM",
+		previewImage: "/vocosim-preview.png",
+		previewLink: "http://37.27.45.218:3420/",
 	},
 
 	{
 		title: "GetScambo",
 		description:
 			"An game where player should learn to recognize scam emails. The game was created as a part of a school project.",
-		tools: "fa-html5 fa-css3-alt fa-database fa-react",
+		tools: ["html5", "css3", "database", "react"],
 		gitLink: "https://github.com/Mart556/getscambo",
 		previewImage: "/getscambo-preview.webp",
+		previewLink: "http://37.27.45.218/",
 	},
 
 	{
 		title: "VotingSys",
 		description:
 			"Simple web app what demostrate how voting system works. The app was created as a part of a school project.",
-		tools: "fa-html5 fa-css3-alt fa-database fa-react",
+		tools: ["html5", "css3", "database", "react"],
 		gitLink: "https://github.com/Mart556/votingsys",
 		previewImage: "/votingsys-preview.webp",
+		previewLink: "http://37.27.45.218:3001",
 	},
 
 	{
 		title: "To-Do App",
 		description:
 			"A simple To-Do app with a clean and minimalistic design. The app allows you to add, delete and filter tasks.",
-		tools: "fa-html5 fa-css3-alt fa-vuejs",
+		tools: ["html5", "css3", "vuejs"],
 		gitLink: "https://github.com/Mart556/lopuprojekt_v1",
 		previewImage: "/todo-preview.webp",
 	},
@@ -42,17 +64,79 @@ const Data = [
 		title: "Weather App",
 		description:
 			"App that allows user to search for any Estonian city and view its current weather. The app utilizes the OpenWeather API for retrieving weather data.",
-		tools: "fa-html5 fa-css3-alt fa-js",
+		tools: ["html5", "css3", "js"],
 		gitLink: "https://github.com/Mart556/weather_express",
 		previewImage: "/weather-app-preview.webp",
 	},
 ];
 
-const ProjectCard = ({ project }: { project: (typeof Data)[0] }) => {
+// Map tool names to React Icons components
+const getToolIcon = (tool: string) => {
+	const toolIconMap: Record<string, React.ReactNode> = {
+		react: (
+			<FaReact
+				key={tool}
+				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+			/>
+		),
+		node: (
+			<FaNode
+				key={tool}
+				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+			/>
+		),
+		html5: (
+			<FaHtml5
+				key={tool}
+				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+			/>
+		),
+		css3: (
+			<FaCss3Alt
+				key={tool}
+				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+			/>
+		),
+		database: (
+			<FaDatabase
+				key={tool}
+				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+			/>
+		),
+		js: (
+			<FaJs
+				key={tool}
+				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+			/>
+		),
+		vuejs: (
+			<FaVuejs
+				key={tool}
+				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+			/>
+		),
+	};
+	return toolIconMap[tool] || null;
+};
+
+const ProjectCard = ({
+	project,
+	index,
+	animatedCards,
+}: {
+	project: DataType;
+	index: number;
+	animatedCards: Set<number>;
+}) => {
 	const [showPreview, setShowPreview] = useState(false);
+	const isAnimated = animatedCards.has(index);
 
 	return (
 		<div
+			style={{
+				animation: isAnimated ? `slideInUp 0.6s ease-out forwards` : "none",
+				opacity: 0,
+			}}
 			className='group relative h-96 overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all duration-300'
 			onMouseEnter={() => setShowPreview(true)}
 			onMouseLeave={() => setShowPreview(false)}
@@ -81,6 +165,15 @@ const ProjectCard = ({ project }: { project: (typeof Data)[0] }) => {
 					<p className='text-gray-300 text-sm line-clamp-3'>
 						{project.description}
 					</p>
+
+					<div className='mt-4 flex flex-wrap gap-2'>
+						{Array.isArray(project.tools) &&
+							project.tools.map((tool: string) => (
+								<div key={tool} title={tool}>
+									{getToolIcon(tool)}
+								</div>
+							))}
+					</div>
 				</div>
 
 				<div className='flex items-center justify-between pt-4 border-t border-gray-700'>
@@ -93,6 +186,18 @@ const ProjectCard = ({ project }: { project: (typeof Data)[0] }) => {
 						<FaGithub className='h-5 w-5' />
 						<span className='text-sm font-semibold'>View Code</span>
 					</a>
+
+					{project.previewLink && (
+						<a
+							href={project.previewLink}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200'
+						>
+							<FaLink className='h-5 w-5' />
+							<span className='text-sm font-semibold'>Live Preview</span>
+						</a>
+					)}
 				</div>
 			</div>
 		</div>
@@ -100,14 +205,87 @@ const ProjectCard = ({ project }: { project: (typeof Data)[0] }) => {
 };
 
 const Projects = () => {
+	const [animatedCards, setAnimatedCards] = useState<Set<number>>(new Set());
+	const [isVisible, setIsVisible] = useState(false);
+	const projectsRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting && !isVisible) {
+						setIsVisible(true);
+						observer.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.2 }
+		);
+
+		const currentRef = projectsRef.current;
+
+		if (currentRef) {
+			observer.observe(currentRef);
+		}
+
+		return () => {
+			if (currentRef) {
+				observer.unobserve(currentRef);
+			}
+		};
+	}, [isVisible]);
+
+	// Sequential animation - each card animates after the previous one finishes
+	useEffect(() => {
+		if (!isVisible) return;
+
+		// Show first card immediately
+		setAnimatedCards(new Set([0]));
+
+		let animationIndex = 0;
+		const animationDuration = 400; // Duration of each card's animation in ms
+
+		const animateNextCard = () => {
+			if (animationIndex < Data.length) {
+				setAnimatedCards((prev) => new Set([...prev, animationIndex]));
+				animationIndex++;
+				setTimeout(animateNextCard, animationDuration);
+			}
+		};
+
+		// Start animating from second card
+		setTimeout(animateNextCard, animationDuration);
+	}, [isVisible]);
+
 	return (
-		<div id='projects' className='h-full flex flex-col text-white'>
+		<div id='projects' className='h-full py-20 flex flex-col text-white'>
+			<style>{`
+				@keyframes slideInUp {
+					from {
+						opacity: 0;
+						transform: translateY(40px);
+					}
+					to {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+			`}</style>
+
 			<h2 className='text-4xl font-semibold mb-12'>Featured Projects</h2>
 
 			<div className='w-full overflow-hidden'>
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-					{Data.map((project) => (
-						<ProjectCard key={project.title} project={project} />
+				<div
+					ref={projectsRef}
+					className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+				>
+					{Data.map((project, index) => (
+						<ProjectCard
+							key={project.title}
+							project={project}
+							index={index}
+							animatedCards={animatedCards}
+						/>
 					))}
 				</div>
 			</div>

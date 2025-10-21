@@ -42,9 +42,9 @@ const About = () => {
 	return (
 		<div
 			id='about'
-			className='h-full flex items-center justify-between text-white'
+			className='h-full py-20 flex items-center justify-between text-white'
 		>
-			<div className='max-w-3xl  px-6 py-20 space-y-6'>
+			<div className='max-w-3xl p-6 space-y-6 md:max-w-xl '>
 				<h2 className='text-4xl font-bold mb-6'>About Me</h2>
 
 				<p className='text-lg'>
@@ -76,7 +76,7 @@ const About = () => {
 
 				<h3 className='text-2xl text-gray-300 font-bold mb-6'>Skills</h3>
 
-				<div className='flex flex-row space-x-6'>
+				<div className='grid grid-cols-2 sm:grid-cols-3 gap-4'>
 					{Skills.map((skill, index) => (
 						<div key={index} className='flex items-center space-x-2'>
 							{skill.icon}
@@ -90,7 +90,7 @@ const About = () => {
 				<img
 					src='./mart.webp'
 					alt='Mart Haamer'
-					className='h-150 rounded mx-auto'
+					className='rounded mx-auto w-100 shadow-lg'
 				/>
 			</div>
 		</div>
