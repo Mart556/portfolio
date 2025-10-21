@@ -1,0 +1,19 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+
+import Nav from "./components/Nav.tsx";
+import SideBars from "./components/SideBars.tsx";
+import Layout from "./components/Layout.tsx";
+
+import Home from "./sections/Home.tsx";
+
+createRoot(document.getElementById("root")!).render(
+	<StrictMode>
+		<Nav />
+		<SideBars />
+		<Layout>
+			<Home />
+		</Layout>
+	</StrictMode>
+);

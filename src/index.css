@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--primary-color: #0b132b;
+	--secondary-color: #1c2541;
+	--accent-color: #3a5068;
+	--text-color: #5bc0be;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--primary-color);
+
+	background: radial-gradient(
+		circle at 50% 50%,
+		var(--secondary-color) -40%,
+		var(--primary-color) 20%
+	);
+
+	color: var(--text-color);
+
+	cursor: url("./hammer-cursor.png"), auto;
+}

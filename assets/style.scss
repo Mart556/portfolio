@@ -1,431 +1,431 @@
 $backgroundColor: #0b132b;
-$backgroundColor-2: rgb(28, 37, 65);
+$backgroundColor-2: #1c2541;
 $textColor: #5bc0be;
 $color-2: #5bc0be;
 $color-3: #6fffe9;
 
 :root {
-    font-family: Inter, sans-serif;
-    font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+	font-family: Inter, sans-serif;
+	font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
 
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
 }
 
 @supports (font-variation-settings: normal) {
-    :root {
-        font-family: InterVariable, sans-serif;
-    }
+	:root {
+		font-family: InterVariable, sans-serif;
+	}
 }
 
 body {
-    color: $textColor !important;
-    background-color: $backgroundColor !important;
+	color: $textColor !important;
+	background-color: $backgroundColor !important;
 
-    background: radial-gradient(
-        circle at 50% 50%,
-        $backgroundColor-2 -40%,
-        $backgroundColor 20%
-    );
+	background: radial-gradient(
+		circle at 50% 50%,
+		$backgroundColor-2 -40%,
+		$backgroundColor 20%
+	);
 
-    cursor: url("./hammer-cursor.png"), auto;
+	cursor: url("./hammer-cursor.png"), auto;
 }
 
 @keyframes appear {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
 
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .container {
-    animation: appear 1s linear;
-    animation-timeline: view();
-    animation-range: entry 0%;
+	animation: appear 1s linear;
+	animation-timeline: view();
+	animation-range: entry 0%;
 
-    padding-top: 100px;
-    padding-bottom: 100px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 /* Navbar */
 
 .nav-link {
-    margin-left: 5px;
-    color: $textColor !important;
+	margin-left: 5px;
+	color: $textColor !important;
 }
 
 .nav-link:hover {
-    color: $color-3 !important;
-    transition: 0.5s;
-    transform: translateY(-2px);
+	color: $color-3 !important;
+	transition: 0.5s;
+	transform: translateY(-2px);
 }
 
 .navbar {
-    backdrop-filter: blur(5px);
-    background-color: rgba($color: $backgroundColor, $alpha: 0.8);
-    animation-duration: 0.2s;
-    font-weight: 500;
+	backdrop-filter: blur(5px);
+	background-color: rgba($color: $backgroundColor, $alpha: 0.8);
+	animation-duration: 0.2s;
+	font-weight: 500;
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 p {
-    line-height: 150%;
+	line-height: 150%;
 }
 
 .text-font {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 300;
-    font-size: 18px;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 300;
+	font-size: 18px;
 }
 
 .text-font-sm {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
 }
 
 .vl-left {
-    border-left: 1px solid $textColor;
-    height: 100px;
-    position: relative;
-    left: 46%;
-    bottom: 0;
+	border-left: 1px solid $textColor;
+	height: 100px;
+	position: relative;
+	left: 46%;
+	bottom: 0;
 }
 
 .vl-right {
-    border-right: 1px solid $textColor;
-    height: 100px;
-    position: relative;
-    right: 56%;
-    bottom: 0;
+	border-right: 1px solid $textColor;
+	height: 100px;
+	position: relative;
+	right: 56%;
+	bottom: 0;
 }
 
 .side-link {
-    text-decoration: none;
-    color: $textColor;
+	text-decoration: none;
+	color: $textColor;
 
-    &:hover {
-        color: $color-3;
-        transition: 0.5s;
-        transform: translateY(-2px);
-    }
+	&:hover {
+		color: $color-3;
+		transition: 0.5s;
+		transform: translateY(-2px);
+	}
 }
 
 #rightMenu a {
-    writing-mode: vertical-rl;
-    margin-bottom: 15px;
+	writing-mode: vertical-rl;
+	margin-bottom: 15px;
 
-    &:hover {
-        color: $color-3;
-        transition: 0.5s;
-        transform: translateY(-2px);
-    }
+	&:hover {
+		color: $color-3;
+		transition: 0.5s;
+		transform: translateY(-2px);
+	}
 }
 
 hr {
-    border-radius: 5px;
-    border: 2px solid $color-3 !important;
+	border-radius: 5px;
+	border: 2px solid $color-3 !important;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $backgroundColor-2;
-    border: 3px solid $backgroundColor;
-    border-radius: 8px;
+	background-color: $backgroundColor-2;
+	border: 3px solid $backgroundColor;
+	border-radius: 8px;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+	width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: $backgroundColor;
+	background: $backgroundColor;
 }
 
 /* --------------- */
 
 ::selection {
-    background-color: rgba($color: #25385a, $alpha: 0.9);
+	background-color: rgba($color: #25385a, $alpha: 0.9);
 }
 
 /* Mobile view */
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 720px) {
-    #rightMenu,
-    #leftMenu {
-        visibility: hidden;
-    }
+	#rightMenu,
+	#leftMenu {
+		visibility: hidden;
+	}
 }
 
 /* Desktop view */
 
 @media only screen and (min-device-width: 992px) {
-    .mobile-view {
-        visibility: hidden;
-    }
+	.mobile-view {
+		visibility: hidden;
+	}
 }
 
 .main-header-text {
-    font-size: 5.6rem;
-    font-weight: bold;
-    font-display: swap;
+	font-size: 5.6rem;
+	font-weight: bold;
+	font-display: swap;
 }
 
 .project-box {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    border: 2px solid $backgroundColor-2;
-    background-color: rgba($backgroundColor-2, 0.5);
-    backdrop-filter: blur(5px);
+	border: 2px solid $backgroundColor-2;
+	background-color: rgba($backgroundColor-2, 0.5);
+	backdrop-filter: blur(5px);
 
-    height: 100%;
-    cursor: pointer;
+	height: 100%;
+	cursor: pointer;
 
-    animation: fadeInLeft 1s forwards;
+	animation: fadeInLeft 1s forwards;
 
-    &:hover {
-        border: 2px solid rgba($color: $color-3, $alpha: 0.3);
-        transition: all 1s;
+	&:hover {
+		border: 2px solid rgba($color: $color-3, $alpha: 0.3);
+		transition: all 1s;
 
-        .project-box-title {
-            color: $color-3;
-            transition: all 0.5s;
-        }
+		.project-box-title {
+			color: $color-3;
+			transition: all 0.5s;
+		}
 
-        .project-tools {
-            color: $color-3;
-            transition: all 0.5s;
-        }
-    }
+		.project-tools {
+			color: $color-3;
+			transition: all 0.5s;
+		}
+	}
 }
 
 .btn-preview {
-    border-radius: 50px;
-    padding: 5px 10px;
-    border: 2px solid $backgroundColor-2;
-    background-color: rgba($backgroundColor-2, 0.5);
-    backdrop-filter: blur(5px);
-    color: $textColor;
-    width: max-content;
-    font-weight: 500;
-    box-shadow: inset 0 0 8px rgba($color-2, $alpha: 0.5);
+	border-radius: 50px;
+	padding: 5px 10px;
+	border: 2px solid $backgroundColor-2;
+	background-color: rgba($backgroundColor-2, 0.5);
+	backdrop-filter: blur(5px);
+	color: $textColor;
+	width: max-content;
+	font-weight: 500;
+	box-shadow: inset 0 0 8px rgba($color-2, $alpha: 0.5);
 
-    &:hover {
-        background-color: rgba($color: $color-3, $alpha: 0.5);
-        color: $backgroundColor-2;
-        transition: all 0.5s;
-    }
+	&:hover {
+		background-color: rgba($color: $color-3, $alpha: 0.5);
+		color: $backgroundColor-2;
+		transition: all 0.5s;
+	}
 
-    &:disabled {
-        background-color: $backgroundColor-2;
-        color: $color-3;
-        cursor: not-allowed;
-        opacity: 0.6;
-        span {
-            text-decoration: line-through;
-        }
-    }
+	&:disabled {
+		background-color: $backgroundColor-2;
+		color: $color-3;
+		cursor: not-allowed;
+		opacity: 0.6;
+		span {
+			text-decoration: line-through;
+		}
+	}
 }
 
 .preview-modal {
-    display: none;
-    position: fixed;
-    z-index: 99;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba($color: $backgroundColor, $alpha: 0.8);
+	display: none;
+	position: fixed;
+	z-index: 99;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba($color: $backgroundColor, $alpha: 0.8);
 }
 
 .preview-modal-content {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: $backgroundColor-2;
-    border: 2px solid $color-3;
-    border-radius: 10px;
-    padding: 5px 20px 20px 20px;
-    width: 80%;
-    max-width: 800px;
-    max-height: 80%;
-    overflow: auto;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $backgroundColor-2;
+	border: 2px solid $color-3;
+	border-radius: 10px;
+	padding: 5px 20px 20px 20px;
+	width: 80%;
+	max-width: 800px;
+	max-height: 80%;
+	overflow: auto;
 
-    .modal-image {
-        width: 100%;
-        height: auto;
-    }
+	.modal-image {
+		width: 100%;
+		height: auto;
+	}
 
-    .preview-modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 15px;
+	.preview-modal-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 15px;
 
-        h3 {
-            font-size: 1.5rem;
-            color: $color-3;
-            margin: 0;
-        }
+		h3 {
+			font-size: 1.5rem;
+			color: $color-3;
+			margin: 0;
+		}
 
-        .close {
-            color: $color-3;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0 10px;
-        }
-    }
+		.close {
+			color: $color-3;
+			font-size: 2rem;
+			cursor: pointer;
+			padding: 0 10px;
+		}
+	}
 }
 
 .project-description {
-    overflow: hidden;
-    word-wrap: break-word;
-    white-space: normal;
-    word-break: break-word;
-    user-select: none;
+	overflow: hidden;
+	word-wrap: break-word;
+	white-space: normal;
+	word-break: break-word;
+	user-select: none;
 }
 
 .form-control {
-    box-shadow: none !important;
-    border: none !important;
-    background-color: $backgroundColor-2 !important;
-    color: $textColor !important;
+	box-shadow: none !important;
+	border: none !important;
+	background-color: $backgroundColor-2 !important;
+	color: $textColor !important;
 }
 
 a {
-    display: inline-block !important;
-    text-decoration: none !important;
+	display: inline-block !important;
+	text-decoration: none !important;
 }
 
 .form-button {
-    border-radius: 10px;
-    padding: 10px;
-    border: 2px solid $backgroundColor-2;
-    background-color: rgba($backgroundColor-2, 0.5);
-    backdrop-filter: blur(5px);
-    color: $textColor;
-    width: 50%;
+	border-radius: 10px;
+	padding: 10px;
+	border: 2px solid $backgroundColor-2;
+	background-color: rgba($backgroundColor-2, 0.5);
+	backdrop-filter: blur(5px);
+	color: $textColor;
+	width: 50%;
 
-    &:hover {
-        background-color: rgba($color: $color-3, $alpha: 0.5);
-        color: $backgroundColor-2;
-        transition: all 0.5s;
-        font-weight: bold;
-    }
+	&:hover {
+		background-color: rgba($color: $color-3, $alpha: 0.5);
+		color: $backgroundColor-2;
+		transition: all 0.5s;
+		font-weight: bold;
+	}
 }
 
 .about-sub-header {
-    display: flex;
-    align-items: center;
-    text-align: start;
+	display: flex;
+	align-items: center;
+	text-align: start;
 
-    h4 {
-        min-width: 125px;
-    }
+	h4 {
+		min-width: 125px;
+	}
 
-    hr {
-        width: 20%;
-        border: 2px solid $color-3;
-        border-radius: 5px;
-        margin: 0;
-    }
+	hr {
+		width: 20%;
+		border: 2px solid $color-3;
+		border-radius: 5px;
+		margin: 0;
+	}
 }
 
 .page-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-    h1 {
-        font-size: 2.5rem;
-    }
+	h1 {
+		font-size: 2.5rem;
+	}
 
-    .page-header-buttons {
-        display: flex;
-        gap: 1rem;
-    }
+	.page-header-buttons {
+		display: flex;
+		gap: 1rem;
+	}
 }
 
 .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 1rem;
 
-    list-style-type: none;
-    padding: 0;
+	list-style-type: none;
+	padding: 0;
 
-    li {
-        background-color: $backgroundColor-2;
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        color: $color-3;
-    }
+	li {
+		background-color: $backgroundColor-2;
+		padding: 0.5rem 1rem;
+		border-radius: 10px;
+		color: $color-3;
+	}
 }
 
 .education-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 1rem;
 
-    list-style-type: none;
-    padding: 0;
+	list-style-type: none;
+	padding: 0;
 
-    li {
-        background-color: $backgroundColor-2;
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        color: $color-3;
-    }
+	li {
+		background-color: $backgroundColor-2;
+		padding: 0.5rem 1rem;
+		border-radius: 10px;
+		color: $color-3;
+	}
 }
 
 .show-more-btn {
-    border-radius: 10px;
-    padding: 10px;
-    border: 2px solid $backgroundColor-2;
-    background-color: rgba($backgroundColor-2, 0.5);
-    backdrop-filter: blur(5px);
-    color: $textColor;
-    width: 12% !important;
+	border-radius: 10px;
+	padding: 10px;
+	border: 2px solid $backgroundColor-2;
+	background-color: rgba($backgroundColor-2, 0.5);
+	backdrop-filter: blur(5px);
+	color: $textColor;
+	width: 12% !important;
 
-    &:hover {
-        background-color: rgba($color: $color-3, $alpha: 0.5);
-        color: $backgroundColor-2;
-        transition: all 0.5s;
-        font-weight: bold;
-    }
+	&:hover {
+		background-color: rgba($color: $color-3, $alpha: 0.5);
+		color: $backgroundColor-2;
+		transition: all 0.5s;
+		font-weight: bold;
+	}
 
-    @media screen and (max-width: 768px) {
-        width: 50% !important;
-    }
+	@media screen and (max-width: 768px) {
+		width: 50% !important;
+	}
 }
 
 @keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
