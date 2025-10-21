@@ -42,7 +42,7 @@ const About = () => {
 	return (
 		<div
 			id='about'
-			className='h-full py-12 md:py-20 flex flex-col md:flex-row items-center justify-between text-white gap-8 md:gap-0'
+			className='h-full py-12 md:py-20 flex flex-col md:flex-row items-center justify-around text-white gap-8 md:gap-0'
 		>
 			<div className='max-w-3xl px-4 md:px-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
 				<h2 className='text-3xl md:text-4xl font-bold mb-6'>About Me</h2>
@@ -99,11 +99,11 @@ const About = () => {
 				</div>
 			</div>
 
-			<div className='px-4 md:px-6 py-12 md:py-20  w-full md:w-auto flex justify-center md:block'>
+			<div className='flex flex-row justify-center items-center'>
 				<img
 					src='./mart.webp'
 					alt='Mart Haamer'
-					className='rounded w-80 md:w-100 shadow-lg object-cover'
+					className='rounded w-80 md:w-120 shadow-lg object-contain '
 				/>
 			</div>
 		</div>
