@@ -1,6 +1,5 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
-
 const Nav = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const navItems = ["Home", "About", "Projects", "Contact"];

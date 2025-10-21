@@ -48,16 +48,20 @@ const Contact = () => {
 						>
 							<FaLinkedin />
 						</a>
-						<a
-							href='./mart_haamer_cv.pdf'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='flex items-center justify-center w-12 h-12 rounded-lg text-cyan-400 text-2xl transition-all duration-300 bg-cyan-400/10 border-2 border-transparent hover:text-white hover:bg-cyan-400/20 hover:border-cyan-400 hover:-translate-y-1'
-							title='CV'
-						>
-							<FaFileAlt />
-						</a>
 					</div>
+				</div>
+
+				<div className='md:hidden'>
+					<h3 className='text-xl font-semibold mb-4'>My CV</h3>
+					<a
+						href='./mart_haamer_cv.pdf'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='flex items-center justify-center w-12 h-12 rounded-lg text-cyan-400 text-2xl transition-all duration-300 bg-cyan-400/10 border-2 border-transparent hover:text-white hover:bg-cyan-400/20 hover:border-cyan-400 hover:-translate-y-1'
+						title='CV'
+					>
+						<FaFileAlt />
+					</a>
 				</div>
 			</div>
 		</div>

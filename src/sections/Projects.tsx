@@ -235,26 +235,20 @@ const Projects = () => {
 		};
 	}, [isVisible]);
 
-	// Sequential animation - each card animates after the previous one finishes
 	useEffect(() => {
 		if (!isVisible) return;
 
-		// Show first card immediately
-		setAnimatedCards(new Set([0]));
+		const animationDuration = 400;
 
-		let animationIndex = 0;
-		const animationDuration = 400; // Duration of each card's animation in ms
+		Data.forEach((_, index) => {
+			setTimeout(() => {
+				setAnimatedCards((prev) => new Set([...prev, index]));
+			}, index * animationDuration);
+		});
 
-		const animateNextCard = () => {
-			if (animationIndex < Data.length) {
-				setAnimatedCards((prev) => new Set([...prev, animationIndex]));
-				animationIndex++;
-				setTimeout(animateNextCard, animationDuration);
-			}
+		return () => {
+			setAnimatedCards(new Set());
 		};
-
-		// Start animating from second card
-		setTimeout(animateNextCard, animationDuration);
 	}, [isVisible]);
 
 	return (

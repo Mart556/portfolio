@@ -1,5 +1,6 @@
 import type React from "react";
 import { useEffect } from "react";
+import { isMobile } from "react-device-detect";
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -12,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
 		document.body.addEventListener("click", function (event) {
 			const target = event.target as HTMLElement;
 			if (
-				window.innerWidth < 768 ||
+				isMobile ||
 				target instanceof HTMLAnchorElement ||
 				target instanceof HTMLButtonElement ||
 				target.closest("button") ||
@@ -46,7 +47,7 @@ const Layout = ({ children }: LayoutProps) => {
 
 	return (
 		<div className='flex w-full'>
-			<div className='w-20 shrink-0 hidden md:block' />
+			<div className={`w-20 shrink-0 ${isMobile ? "hidden" : "block"}`} />
 
 			<main
 				className='flex-1 h-full overflow-auto no-scrollbar mx-10'
@@ -55,7 +56,7 @@ const Layout = ({ children }: LayoutProps) => {
 				{children}
 			</main>
 
-			<div className='w-20 shrink-0 hidden md:block' />
+			<div className={`w-20 shrink-0 ${isMobile ? "hidden" : "block"}`} />
 
 			<style>{`
                 .no-scrollbar::-webkit-scrollbar { display: none; }
