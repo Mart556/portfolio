@@ -2,6 +2,17 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+	--color-primaryDark: #0b132b;
+	--color-secondaryDark: #1c2541;
+	--color-accentDark: #3a5068;
+	--color-textDark: #9be3e2;
+	--color-primaryLight: #9be3e2;
+	--color-secondaryLight: #3a5068;
+	--color-accentLight: #1c2541;
+	--color-textLight: #0b132b;
+}
+
 :root {
 	font-family: "Rubik", sans-serif;
 	line-height: 1.5;
@@ -9,7 +20,7 @@
 
 	color-scheme: light dark;
 	font-synthesis: none;
-	text-rendering: optimizeLegibility;
+	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -61,14 +72,26 @@ body {
 	padding: 0;
 	background-color: var(--primary-color);
 
-	background: radial-gradient(
-		circle at 50% 50%,
-		var(--secondary-color) -40%,
-		var(--primary-color) 20%
-	);
-
-	color: var(--text-color);
-
 	cursor: url("./assets/hammer-cursor.png"), auto;
 	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes scroll-bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+		opacity: 0.7;
+	}
+	50% {
+		transform: translateY(8px);
+		opacity: 1;
+	}
+}
+
+.scroll-arrow {
+	animation: scroll-bounce 2s infinite;
+}
+
+main::-webkit-scrollbar {
+	display: none;
 }

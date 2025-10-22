@@ -35,7 +35,7 @@ const Data: DataType[] = [
 		title: "GetScambo",
 		description:
 			"An game where player should learn to recognize scam emails. The game was created as a part of a school project.",
-		tools: ["html5", "css3", "database", "react"],
+		tools: ["node", "database", "react"],
 		gitLink: "https://github.com/Mart556/getscambo",
 		previewImage: "/getscambo-preview.webp",
 		previewLink: "http://37.27.45.218:81",
@@ -45,13 +45,13 @@ const Data: DataType[] = [
 		title: "VotingSys",
 		description:
 			"Simple web app what demostrate how voting system works. The app was created as a part of a school project.",
-		tools: ["html5", "css3", "database", "react"],
+		tools: ["node", "database", "react"],
 		gitLink: "https://github.com/Mart556/votingsys",
-		previewImage: "/votingsys-preview.webp",
+		previewImage: "/votingsys-preview.png",
 		previewLink: "http://37.27.45.218:3001",
 	},
 
-	{
+	/* 	{
 		title: "To-Do App",
 		description:
 			"A simple To-Do app with a clean and minimalistic design. The app allows you to add, delete and filter tasks.",
@@ -67,54 +67,19 @@ const Data: DataType[] = [
 		tools: ["html5", "css3", "js"],
 		gitLink: "https://github.com/Mart556/weather_express",
 		previewImage: "/weather-app-preview.webp",
-	},
+	}, */
 ];
 
 // Map tool names to React Icons components
 const getToolIcon = (tool: string) => {
 	const toolIconMap: Record<string, React.ReactNode> = {
-		react: (
-			<FaReact
-				key={tool}
-				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
-			/>
-		),
-		node: (
-			<FaNode
-				key={tool}
-				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
-			/>
-		),
-		html5: (
-			<FaHtml5
-				key={tool}
-				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
-			/>
-		),
-		css3: (
-			<FaCss3Alt
-				key={tool}
-				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
-			/>
-		),
-		database: (
-			<FaDatabase
-				key={tool}
-				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
-			/>
-		),
-		js: (
-			<FaJs
-				key={tool}
-				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
-			/>
-		),
-		vuejs: (
-			<FaVuejs
-				key={tool}
-				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
-			/>
-		),
+		react: <FaReact key={tool} className='h-5 w-5' />,
+		node: <FaNode key={tool} className='h-5 w-5' />,
+		html5: <FaHtml5 key={tool} className='h-5 w-5 ' />,
+		css3: <FaCss3Alt key={tool} className='h-5 w-5 ' />,
+		database: <FaDatabase key={tool} className='h-5 w-5 ' />,
+		js: <FaJs key={tool} className='h-5 w-5 ' />,
+		vuejs: <FaVuejs key={tool} className='h-5 w-5 ' />,
 	};
 	return toolIconMap[tool] || null;
 };
@@ -137,7 +102,7 @@ const ProjectCard = ({
 				animation: isAnimated ? `slideInUp 0.4s ease-out forwards` : "none",
 				opacity: 0,
 			}}
-			className='group relative h-96 overflow-hidden rounded-lg bg-secondaryLight dark:bg-secondaryDark shadow-lg transition-all duration-300 border-2 dark:border-cyan-800'
+			className='group relative h-96 overflow-hidden rounded-lg bg-accentLight dark:bg-secondaryDark shadow-lg transition-all duration-300 border-2 dark:border-cyan-800 border-primaryDark hover:shadow-2xl'
 			onMouseEnter={() => setShowPreview(true)}
 			onMouseLeave={() => setShowPreview(false)}
 		>
@@ -151,20 +116,16 @@ const ProjectCard = ({
 				<img
 					src={project.previewImage}
 					alt={project.title}
-					className='h-full w-full object-contain'
+					className='h-full w-full object-cover'
 				/>
 
-				<div className='absolute inset-0 bg-black/30' />
+				<div className='absolute inset-0 bg-black/55' />
 			</div>
 
-			<div className='relative z-10 flex h-full flex-col justify-between p-6'>
+			<div className='relative z-10 flex h-full flex-col justify-between p-6 hover:text-white transition-colors duration-500'>
 				<div>
-					<h3 className='text-2xl font-bold text-textLight dark:text-textDark mb-3'>
-						{project.title}
-					</h3>
-					<p className='text-accentLight dark:text-accentDark text-sm line-clamp-3'>
-						{project.description}
-					</p>
+					<h3 className='text-2xl font-bold mb-3'>{project.title}</h3>
+					<p className='text-sm line-clamp-3'>{project.description}</p>
 
 					<div className='mt-4 flex flex-wrap gap-2'>
 						{Array.isArray(project.tools) &&
@@ -176,12 +137,12 @@ const ProjectCard = ({
 					</div>
 				</div>
 
-				<div className='flex items-center justify-between pt-4  '>
+				<div className='flex items-center justify-between pt-4'>
 					<a
 						href={project.gitLink}
 						target='_blank'
 						rel='noopener noreferrer'
-						className='flex items-center gap-2 text-accentDark dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors duration-200'
+						className='flex items-center gap-2  '
 					>
 						<FaGithub className='h-5 w-5' />
 						<span className='text-sm font-semibold'>View Code</span>
@@ -192,7 +153,7 @@ const ProjectCard = ({
 							href={project.previewLink}
 							target='_blank'
 							rel='noopener noreferrer'
-							className='flex items-center gap-2 text-accentDark dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors duration-200'
+							className='flex items-center gap-2 '
 						>
 							<FaLink className='h-5 w-5' />
 							<span className='text-sm font-semibold'>Live Preview</span>
@@ -254,7 +215,7 @@ const Projects = () => {
 	return (
 		<div
 			id='projects'
-			className='h-full py-20 mx-10 flex flex-col bg-primaryDark dark:bg-primaryDark text-textDark dark:text-textDark'
+			className='h-full py-20 mx-10 flex flex-col dark:text-textDark'
 		>
 			<style>{`
 				@keyframes slideInUp {
@@ -269,9 +230,11 @@ const Projects = () => {
 				}
 			`}</style>
 
-			<h2 className='text-4xl font-semibold mb-12'>Featured Projects</h2>
+			<h2 className='text-4xl font-semibold mb-12 text-textLight dark:text-textDark'>
+				Featured Projects
+			</h2>
 
-			<div className='w-full overflow-hidden'>
+			<div className='w-full overflow-hidden text-textDark'>
 				<div
 					ref={projectsRef}
 					className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'

@@ -7,13 +7,13 @@ const ThemeToggle = () => {
 	return (
 		<button
 			onClick={toggleTheme}
-			className='nav-link p-2 rounded-lg transition-colors duration-200 hover:bg-white/10 dark:hover:bg-black/20'
+			className='cursor-pointer p-2 rounded-lg transition-colors duration-200 hover:bg-white/10 dark:hover:bg-black/20'
 			aria-label='Toggle dark mode'
 		>
 			{isDark ? (
-				<BsSunFill className='text-xl text-yellow-400' />
+				<BsSunFill className='text-3xl md:text-xl text-yellow-400' />
 			) : (
-				<BsFillMoonStarsFill className='text-xl text-slate-700' />
+				<BsFillMoonStarsFill className='text-3xl md:text-xl text-slate-700' />
 			)}
 		</button>
 	);

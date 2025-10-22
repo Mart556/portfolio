@@ -47,20 +47,16 @@ const Layout = ({ children }: LayoutProps) => {
 
 	return (
 		<div className='flex w-full'>
-			<div className={`w-20 shrink-0 ${isMobile ? "hidden" : "block"}`} />
+			<div className={`w-20 shrink-0  ${isMobile ? "hidden" : "block"}`} />
 
 			<main
-				className='flex-1 h-full overflow-auto no-scrollbar md:mx-10'
+				className='flex-1 h-full overflow-auto md:mx-10 '
 				style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
 			>
 				{children}
 			</main>
 
-			<div className={`w-20 shrink-0 ${isMobile ? "hidden" : "block"}`} />
-
-			<style>{`
-                .no-scrollbar::-webkit-scrollbar { display: none; }
-            `}</style>
+			<div className={`w-20 shrink-0  ${isMobile ? "hidden" : "block"}`} />
 		</div>
 	);
 };

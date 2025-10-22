@@ -44,7 +44,7 @@ const Nav = () => {
 			</ul>
 		</div>
 	) : (
-		<nav className='p-4 flex flex-row justify-between items-center z-50 fixed w-full bg-white/5 backdrop-blur-md border-b border-cyan-400/10 dark:bg-white/5 dark:border-cyan-400/10 bg-opacity-90 dark:bg-opacity-5 text-slate-900 dark:text-white text-accendDark'>
+		<nav className='p-4 flex flex-row justify-between items-center z-50 fixed w-full dark:bg-white/5 bg-black/5 backdrop-blur-md border-b border-cyan-400/10  dark:border-cyan-400/10 bg-opacity-90 dark:bg-opacity-5'>
 			<div className='flex flex-end'>
 				<img src='./logo.svg' alt='Logo' className='h-10' />
 			</div>
@@ -112,7 +112,7 @@ const Nav = () => {
 						</button>
 					</li>
 				))}
-				<li className='flex items-center'>
+				<li className='flex items-center underline-offset-0'>
 					<ThemeToggle />
 				</li>
 			</ul>
