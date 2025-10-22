@@ -76,43 +76,43 @@ const getToolIcon = (tool: string) => {
 		react: (
 			<FaReact
 				key={tool}
-				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
 			/>
 		),
 		node: (
 			<FaNode
 				key={tool}
-				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
 			/>
 		),
 		html5: (
 			<FaHtml5
 				key={tool}
-				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
 			/>
 		),
 		css3: (
 			<FaCss3Alt
 				key={tool}
-				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
 			/>
 		),
 		database: (
 			<FaDatabase
 				key={tool}
-				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
 			/>
 		),
 		js: (
 			<FaJs
 				key={tool}
-				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
 			/>
 		),
 		vuejs: (
 			<FaVuejs
 				key={tool}
-				className='h-5 w-5 text-gray-400 hover:text-cyan-400 transition-colors'
+				className='h-5 w-5 text-accentLight dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors'
 			/>
 		),
 	};
@@ -137,7 +137,7 @@ const ProjectCard = ({
 				animation: isAnimated ? `slideInUp 0.4s ease-out forwards` : "none",
 				opacity: 0,
 			}}
-			className='group relative h-96 overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-all duration-300'
+			className='group relative h-96 overflow-hidden rounded-lg bg-secondaryLight dark:bg-secondaryDark shadow-lg transition-all duration-300 border-2 dark:border-cyan-800'
 			onMouseEnter={() => setShowPreview(true)}
 			onMouseLeave={() => setShowPreview(false)}
 		>
@@ -159,10 +159,10 @@ const ProjectCard = ({
 
 			<div className='relative z-10 flex h-full flex-col justify-between p-6'>
 				<div>
-					<h3 className='text-2xl font-bold text-white mb-3'>
+					<h3 className='text-2xl font-bold text-textLight dark:text-textDark mb-3'>
 						{project.title}
 					</h3>
-					<p className='text-gray-300 text-sm line-clamp-3'>
+					<p className='text-accentLight dark:text-accentDark text-sm line-clamp-3'>
 						{project.description}
 					</p>
 
@@ -176,12 +176,12 @@ const ProjectCard = ({
 					</div>
 				</div>
 
-				<div className='flex items-center justify-between pt-4 border-t border-gray-700'>
+				<div className='flex items-center justify-between pt-4  '>
 					<a
 						href={project.gitLink}
 						target='_blank'
 						rel='noopener noreferrer'
-						className='flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200'
+						className='flex items-center gap-2 text-accentDark dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors duration-200'
 					>
 						<FaGithub className='h-5 w-5' />
 						<span className='text-sm font-semibold'>View Code</span>
@@ -192,7 +192,7 @@ const ProjectCard = ({
 							href={project.previewLink}
 							target='_blank'
 							rel='noopener noreferrer'
-							className='flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200'
+							className='flex items-center gap-2 text-accentDark dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors duration-200'
 						>
 							<FaLink className='h-5 w-5' />
 							<span className='text-sm font-semibold'>Live Preview</span>
@@ -252,7 +252,10 @@ const Projects = () => {
 	}, [isVisible]);
 
 	return (
-		<div id='projects' className='h-full py-20 mx-10 flex flex-col text-white'>
+		<div
+			id='projects'
+			className='h-full py-20 mx-10 flex flex-col bg-primaryDark dark:bg-primaryDark text-textDark dark:text-textDark'
+		>
 			<style>{`
 				@keyframes slideInUp {
 					from {

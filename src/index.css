@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
 	font-family: "Rubik", sans-serif;
@@ -7,16 +8,42 @@
 	font-weight: 400;
 
 	color-scheme: light dark;
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
+	/* Dark mode colors (default) */
 	--primary-color: #0b132b;
 	--secondary-color: #1c2541;
-	--accent-color: #3a5068;
+	--accent-color: #00d3f2;
 	--text-color: #5bc0be;
+}
+
+html.light {
+	--primary-color: #9be3e2;
+	--secondary-color: #3a5068;
+	--accent-color: #1c2541;
+	--text-color: #0b132b;
+
+	color-scheme: light;
+}
+
+html:not(.dark) {
+	--primary-color: #9be3e2;
+	--secondary-color: #3a5068;
+	--accent-color: #1c2541;
+	--text-color: #0b132b;
+
+	color-scheme: light;
+}
+
+html.dark {
+	--primary-color: #0b132b;
+	--secondary-color: #1c2541;
+	--accent-color: #00d3f2;
+	--text-color: #5bc0be;
+	color-scheme: dark;
 }
 
 html,
@@ -43,4 +70,5 @@ body {
 	color: var(--text-color);
 
 	cursor: url("./assets/hammer-cursor.png"), auto;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }

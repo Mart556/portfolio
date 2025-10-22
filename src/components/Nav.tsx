@@ -1,5 +1,7 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
+
 const Nav = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const navItems = ["Home", "About", "Projects", "Contact"];
@@ -36,10 +38,13 @@ const Nav = () => {
 						</button>
 					</li>
 				))}
+				<li className='flex justify-center'>
+					<ThemeToggle />
+				</li>
 			</ul>
 		</div>
 	) : (
-		<nav className='p-4 text-white flex flex-row justify-between items-center z-50 fixed w-full bg-white/5 backdrop-blur-md border-b border-cyan-400/10'>
+		<nav className='p-4 flex flex-row justify-between items-center z-50 fixed w-full bg-white/5 backdrop-blur-md border-b border-cyan-400/10 dark:bg-white/5 dark:border-cyan-400/10 bg-opacity-90 dark:bg-opacity-5 text-slate-900 dark:text-white text-accendDark'>
 			<div className='flex flex-end'>
 				<img src='./logo.svg' alt='Logo' className='h-10' />
 			</div>
@@ -59,7 +64,7 @@ const Nav = () => {
 				.nav-link {
 					position: relative;
 					display: inline-block;
-					color: #fff;
+					color: inherit;
 					font-weight: 700;
 					font-size: 1.25rem;
 					cursor: pointer;
@@ -69,7 +74,7 @@ const Nav = () => {
 				.nav-link::after {
 					content: '';
 					position: absolute;
-					bottom: -4px;
+					bottom: -2px;
 					left: 50%;
 					width: 0;
 					height: 2px;
@@ -99,7 +104,7 @@ const Nav = () => {
 				}
 			`}</style>
 
-			<ul className='space-x-8 justify-end hidden md:flex'>
+			<ul className='space-x-8 justify-end hidden md:flex items-center'>
 				{navItems.map((item) => (
 					<li key={item}>
 						<button onClick={scrollToSection(item)} className='nav-link'>
@@ -107,6 +112,9 @@ const Nav = () => {
 						</button>
 					</li>
 				))}
+				<li className='flex items-center'>
+					<ThemeToggle />
+				</li>
 			</ul>
 
 			<div className='md:hidden flex flex-col items-center'>
