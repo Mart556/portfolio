@@ -1,17 +1,42 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
+
 import ThemeToggle from "./ThemeToggle";
 
 const Nav = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const navItems = ["Home", "About", "Projects", "Contact"];
+	const navigate = useNavigate();
 
-	const scrollToSection = (section: string) => () => {
+	const navItems = [
+		{ label: "Home", route: "/" },
+		{ label: "About", route: "/" },
+		{ label: "Projects", route: "/" },
+		{ label: "Contact", route: "/" },
+		{ label: "Archive", route: "/archive" },
+	];
+
+	const scrollToSection = (section: string, route: string) => () => {
 		const sectionId = section.toLowerCase();
-		const element = document.getElementById(sectionId);
+		let element = document.getElementById(sectionId);
+
+		if (route !== window.location.pathname) {
+			navigate({ to: route });
+
+			setTimeout(() => {
+				element = document.getElementById(sectionId);
+
+				if (element) {
+					element.scrollIntoView({ behavior: "instant" });
+					setIsMenuOpen(false);
+				}
+			}, 50);
+			return;
+		}
+
 		if (element) {
 			element.scrollIntoView({ behavior: "smooth" });
-			setIsMenuOpen(false); // Close menu after navigation
+			setIsMenuOpen(false);
 		}
 	};
 
@@ -23,18 +48,18 @@ const Nav = () => {
 		<div className='mobile-menu fixed inset-0 flex flex-col justify-center items-center z-50 md:hidden backdrop-blur-lg '>
 			<button
 				onClick={handleToggleMenu}
-				className='absolute top-6 right-6 text-4xl text-white active:animate-spin'
+				className='absolute top-6 right-6 text-4xl text-theme-primary active:animate-spin'
 			>
 				<FaTimes />
 			</button>
-			<ul className='space-y-10 p-6 text-white'>
+			<ul className='space-y-10 p-6 text-theme-secondary'>
 				{navItems.map((item) => (
-					<li key={item}>
+					<li key={item.label} className='flex justify-center'>
 						<button
-							onClick={scrollToSection(item)}
-							className='nav-link w-full text-center text-4xl font-bold p-4 bg-amber-50/10 rounded-lg hover:bg-white-50/20 transition '
+							onClick={scrollToSection(item.label, item.route)}
+							className='nav-link w-full text-center text-4xl font-bold px-4 py-3 bg-theme-secondary rounded-lg transition '
 						>
-							{item}
+							{item.label}
 						</button>
 					</li>
 				))}
@@ -106,9 +131,12 @@ const Nav = () => {
 
 			<ul className='space-x-8 justify-end hidden md:flex items-center'>
 				{navItems.map((item) => (
-					<li key={item}>
-						<button onClick={scrollToSection(item)} className='nav-link'>
-							{item}
+					<li key={item.label}>
+						<button
+							onClick={scrollToSection(item.label, item.route)}
+							className='nav-link'
+						>
+							{item.label}
 						</button>
 					</li>
 				))}

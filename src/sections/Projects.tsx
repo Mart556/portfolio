@@ -9,68 +9,14 @@ import {
 	FaDatabase,
 	FaJs,
 	FaVuejs,
+	FaStar,
 } from "react-icons/fa";
+import { SiLua } from "react-icons/si";
 
-type DataType = {
-	title: string;
-	description: string;
-	tools: string[];
-	gitLink: string;
-	previewImage: string;
-	previewLink?: string;
-};
+import ProjectsList from "../data/projects.json";
+import type { DataType } from "../types/projects.ts";
+import { useNavigate } from "@tanstack/react-router";
 
-const Data: DataType[] = [
-	{
-		title: "VOCO SIM",
-		description:
-			"The game was created by a team of five during a school hackathon for the school's Open Doors Day.",
-		tools: ["react", "node"],
-		gitLink: "https://github.com/ilmarIV/VOCO_SIM",
-		previewImage: "/vocosim-preview.png",
-		previewLink: "http://37.27.45.218:3420/",
-	},
-
-	{
-		title: "GetScambo",
-		description:
-			"An game where player should learn to recognize scam emails. The game was created as a part of a school project.",
-		tools: ["node", "database", "react"],
-		gitLink: "https://github.com/Mart556/getscambo",
-		previewImage: "/getscambo-preview.webp",
-		previewLink: "http://37.27.45.218:81",
-	},
-
-	{
-		title: "VotingSys",
-		description:
-			"Simple web app what demostrate how voting system works. The app was created as a part of a school project.",
-		tools: ["node", "database", "react"],
-		gitLink: "https://github.com/Mart556/votingsys",
-		previewImage: "/votingsys-preview.png",
-		previewLink: "http://37.27.45.218:3001",
-	},
-
-	/* 	{
-		title: "To-Do App",
-		description:
-			"A simple To-Do app with a clean and minimalistic design. The app allows you to add, delete and filter tasks.",
-		tools: ["html5", "css3", "vuejs"],
-		gitLink: "https://github.com/Mart556/lopuprojekt_v1",
-		previewImage: "/todo-preview.webp",
-	},
-
-	{
-		title: "Weather App",
-		description:
-			"App that allows user to search for any Estonian city and view its current weather. The app utilizes the OpenWeather API for retrieving weather data.",
-		tools: ["html5", "css3", "js"],
-		gitLink: "https://github.com/Mart556/weather_express",
-		previewImage: "/weather-app-preview.webp",
-	}, */
-];
-
-// Map tool names to React Icons components
 const getToolIcon = (tool: string) => {
 	const toolIconMap: Record<string, React.ReactNode> = {
 		react: <FaReact key={tool} className='h-5 w-5' />,
@@ -80,7 +26,9 @@ const getToolIcon = (tool: string) => {
 		database: <FaDatabase key={tool} className='h-5 w-5 ' />,
 		js: <FaJs key={tool} className='h-5 w-5 ' />,
 		vuejs: <FaVuejs key={tool} className='h-5 w-5 ' />,
+		lua: <SiLua key={tool} className='h-5 w-5 ' />,
 	};
+
 	return toolIconMap[tool] || null;
 };
 
@@ -102,7 +50,7 @@ const ProjectCard = ({
 				animation: isAnimated ? `slideInUp 0.4s ease-out forwards` : "none",
 				opacity: 0,
 			}}
-			className='group relative h-96 overflow-hidden rounded-lg bg-accentLight dark:bg-secondaryDark shadow-lg transition-all duration-300 border-2 dark:border-cyan-800 border-primaryDark hover:shadow-2xl'
+			className='group bg-theme-secondary relative h-96 overflow-hidden rounded-lg   shadow-lg transition-all duration-300 border-2 dark:border-cyan-800 border-primaryDark hover:shadow-2xl'
 			onMouseEnter={() => setShowPreview(true)}
 			onMouseLeave={() => setShowPreview(false)}
 		>
@@ -138,15 +86,17 @@ const ProjectCard = ({
 				</div>
 
 				<div className='flex items-center justify-between pt-4'>
-					<a
-						href={project.gitLink}
-						target='_blank'
-						rel='noopener noreferrer'
-						className='flex items-center gap-2  '
-					>
-						<FaGithub className='h-5 w-5' />
-						<span className='text-sm font-semibold'>View Code</span>
-					</a>
+					{project.gitLink && (
+						<a
+							href={project.gitLink}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='flex items-center gap-2  '
+						>
+							<FaGithub className='h-5 w-5' />
+							<span className='text-sm font-semibold'>View Code</span>
+						</a>
+					)}
 
 					{project.previewLink && (
 						<a
@@ -168,9 +118,13 @@ const ProjectCard = ({
 const Projects = () => {
 	const [animatedCards, setAnimatedCards] = useState<Set<number>>(new Set());
 	const [isVisible, setIsVisible] = useState(false);
+	const [hasAnimated, setHasAnimated] = useState(false);
 	const projectsRef = useRef<HTMLDivElement>(null);
+	const navigate = useNavigate();
 
 	useEffect(() => {
+		if (hasAnimated) return;
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -201,11 +155,15 @@ const Projects = () => {
 
 		const animationDuration = 400;
 
-		Data.forEach((_, index) => {
+		ProjectsList.forEach((_, index) => {
 			setTimeout(() => {
 				setAnimatedCards((prev) => new Set([...prev, index]));
 			}, index * animationDuration);
 		});
+
+		setTimeout(() => {
+			setHasAnimated(true);
+		}, ProjectsList.length * animationDuration);
 
 		return () => {
 			setAnimatedCards(new Set());
@@ -215,7 +173,7 @@ const Projects = () => {
 	return (
 		<div
 			id='projects'
-			className='h-full py-20 mx-10 flex flex-col dark:text-textDark'
+			className='h-full py-20 mx-10 flex flex-col text-theme-primary'
 		>
 			<style>{`
 				@keyframes slideInUp {
@@ -230,23 +188,38 @@ const Projects = () => {
 				}
 			`}</style>
 
-			<h2 className='text-4xl font-semibold mb-12 text-textLight dark:text-textDark'>
-				Featured Projects
+			<h2 className='text-3xl md:text-4xl font-semibold mb-12 text-theme-primary flex items-center gap-3'>
+				<FaStar className=' text-yellow-300' /> Featured Projects
 			</h2>
 
-			<div className='w-full overflow-hidden text-textDark'>
+			<div className='w-full overflow-hidden text-theme-primary flex flex-col gap-6'>
 				<div
 					ref={projectsRef}
 					className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
 				>
-					{Data.map((project, index) => (
-						<ProjectCard
-							key={project.title}
-							project={project}
-							index={index}
-							animatedCards={animatedCards}
-						/>
-					))}
+					{ProjectsList.filter((project) => project.featured).map(
+						(project, index) => (
+							<ProjectCard
+								key={project.title}
+								project={project}
+								index={index}
+								animatedCards={animatedCards}
+							/>
+						)
+					)}
+				</div>
+
+				<div
+					className={`flex justify-center my-2 ${
+						hasAnimated ? "opacity-100" : "opacity-0"
+					}`}
+				>
+					<a
+						onClick={() => navigate({ to: "/archive" })}
+						className='px-6 text-xl py-3 bg-theme-secondary border-2 border-theme text-theme-primary rounded-md hover:border-theme/80 transition-all duration-300 cursor-pointer hover:scale-105'
+					>
+						View All Projects
+					</a>
 				</div>
 			</div>
 		</div>

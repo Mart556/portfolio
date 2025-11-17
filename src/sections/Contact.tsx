@@ -4,7 +4,7 @@ const Contact = () => {
 	return (
 		<div
 			id='contact'
-			className='h-full py-20 mx-10 flex flex-col text-textLight dark:text-textDark'
+			className='h-full py-20 px-10 md:px-20 flex flex-col text-theme-primary'
 		>
 			<h2 className='text-4xl font-semibold mb-12'>Get in Touch</h2>
 			<p className='text-lg mb-6'>
@@ -15,12 +15,11 @@ const Contact = () => {
 			<div className='space-y-6'>
 				<a
 					href='mailto:mart.haamer@voco.ee'
-					className='text-accentDark dark:text-accentDark hover:text-textLight dark:hover:text-textDark transition-colors duration-200'
+					className='text-theme-primary transition-colors duration-200'
 				>
 					Email:
 					<span className='ml-2 underline'>mart.haamer@voco.ee</span>
-				</a>
-
+				</a>{" "}
 				<div className='pt-6 md:hidden'>
 					<h3 className='text-xl font-semibold mb-4'>Follow Me</h3>
 					<div className='flex gap-4'>
@@ -28,7 +27,7 @@ const Contact = () => {
 							href='https://github.com/Mart556'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='flex items-center justify-center w-12 h-12 rounded-lg text-accentDark dark:text-accentDark text-2xl transition-all duration-300 bg-accentDark/10 dark:bg-accentDark/10 border-2 border-transparent hover:text-textLight dark:hover:text-textDark hover:bg-accentDark/20 dark:hover:bg-accentDark/20 hover:border-accentDark dark:hover:border-accentDark hover:-translate-y-1'
+							className='flex items-center justify-center w-12 h-12 rounded-lg text-theme-primary md:text-theme-secondary text-2xl transition-all duration-300 border-theme border-2 hover:text-theme-primary hover:scale-110'
 							title='GitHub'
 						>
 							<FaGithub />
@@ -37,7 +36,7 @@ const Contact = () => {
 							href='https://dev.to'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='flex items-center justify-center w-12 h-12 rounded-lg text-accentDark dark:text-accentDark text-2xl transition-all duration-300 bg-accentDark/10 dark:bg-accentDark/10 border-2 border-transparent hover:text-textLight dark:hover:text-textDark hover:bg-accentDark/20 dark:hover:bg-accentDark/20 hover:border-accentDark dark:hover:border-accentDark hover:-translate-y-1'
+							className='flex items-center justify-center w-12 h-12 rounded-lg text-theme-primary md:text-theme-secondary text-2xl transition-all duration-300 border-theme border-2 hover:text-theme-primary hover:scale-110'
 							title='Dev.to'
 						>
 							<FaDev />
@@ -46,21 +45,20 @@ const Contact = () => {
 							href='https://linkedin.com'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='flex items-center justify-center w-12 h-12 rounded-lg text-accentDark dark:text-accentDark text-2xl transition-all duration-300 bg-accentDark/10 dark:bg-accentDark/10 border-2 border-transparent hover:text-textLight dark:hover:text-textDark hover:bg-accentDark/20 dark:hover:bg-accentDark/20 hover:border-accentDark dark:hover:border-accentDark hover:-translate-y-1'
+							className='flex items-center justify-center w-12 h-12 rounded-lg text-theme-primary md:text-theme-secondary text-2xl transition-all duration-300 border-theme border-2 hover:text-theme-primary hover:scale-110'
 							title='LinkedIn'
 						>
 							<FaLinkedin />
 						</a>
 					</div>
 				</div>
-
 				<div className='md:hidden'>
 					<h3 className='text-xl font-semibold mb-4'>My CV</h3>
 					<a
 						href='./mart_haamer_cv.pdf'
 						target='_blank'
 						rel='noopener noreferrer'
-						className='flex items-center justify-center w-12 h-12 rounded-lg text-accentDark dark:text-accentDark text-2xl transition-all duration-300 bg-accentDark/10 dark:bg-accentDark/10 border-2 border-transparent hover:text-textLight dark:hover:text-textDark hover:bg-accentDark/20 dark:hover:bg-accentDark/20 hover:border-accentDark dark:hover:border-accentDark hover:-translate-y-1'
+						className='flex items-center justify-center w-12 h-12 rounded-lg text-theme-primary md:text-theme-secondary text-2xl transition-all duration-300 border-theme border-2 hover:text-theme-primary hover:scale-110'
 						title='CV'
 					>
 						<FaFileAlt />

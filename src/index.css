@@ -2,59 +2,24 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-	--color-primaryDark: #0b132b;
-	--color-secondaryDark: #1c2541;
-	--color-accentDark: #3a5068;
-	--color-textDark: #9be3e2;
-	--color-primaryLight: #9be3e2;
-	--color-secondaryLight: #3a5068;
-	--color-accentLight: #1c2541;
-	--color-textLight: #0b132b;
-}
-
 :root {
 	font-family: "Rubik", sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 
-	color-scheme: light dark;
 	font-synthesis: none;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	/* Dark mode colors (default) */
-	--primary-color: #0b132b;
-	--secondary-color: #1c2541;
-	--accent-color: #00d3f2;
-	--text-color: #5bc0be;
-}
-
-html.light {
-	--primary-color: #9be3e2;
-	--secondary-color: #3a5068;
-	--accent-color: #1c2541;
-	--text-color: #0b132b;
-
-	color-scheme: light;
-}
-
-html:not(.dark) {
-	--primary-color: #9be3e2;
-	--secondary-color: #3a5068;
-	--accent-color: #1c2541;
-	--text-color: #0b132b;
-
-	color-scheme: light;
-}
-
-html.dark {
-	--primary-color: #0b132b;
-	--secondary-color: #1c2541;
-	--accent-color: #00d3f2;
-	--text-color: #5bc0be;
-	color-scheme: dark;
+	--bg-primary: #f0f4f8;
+	--bg-secondary: #dce4ec;
+	--text-primary: #1e293b;
+	--text-secondary: #475569;
+	--accent: #0891b2;
+	--accent-hover: #0e7490;
+	--border: #cbd5e1;
+	--border-hover: #94a3b8;
 }
 
 html,
@@ -67,13 +32,66 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
 	display: none;
 }
+
 body {
 	margin: 0;
 	padding: 0;
-	background-color: var(--primary-color);
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
 
 	cursor: url("./assets/hammer-cursor.png"), auto;
 	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark {
+	--bg-primary: #0b132b;
+	--bg-secondary: #1c2541;
+	--text-primary: #9be3e2;
+	--text-secondary: #7cc9c8;
+	--accent: #00d3f2;
+	--accent-hover: #00b8d4;
+	--border: #3a5068;
+	--border-hover: #5a7088;
+}
+
+.text-theme-primary {
+	color: var(--text-primary);
+}
+
+.text-theme-secondary {
+	color: var(--text-secondary);
+}
+
+.text-theme-accent {
+	color: var(--accent);
+}
+
+.group:hover .group-hover\:text-theme-accent {
+	color: var(--accent);
+}
+
+.bg-theme-primary {
+	background-color: var(--bg-primary);
+}
+
+.bg-theme-secondary {
+	background-color: var(--bg-secondary);
+}
+
+.bg-theme-accent {
+	background-color: var(--accent);
+}
+
+.border-theme {
+	border-color: var(--border);
+}
+
+.border-theme-hover:hover {
+	border-color: var(--border-hover);
+}
+
+main::-webkit-scrollbar {
+	display: none;
 }
 
 @keyframes scroll-bounce {
@@ -90,8 +108,4 @@ body {
 
 .scroll-arrow {
 	animation: scroll-bounce 2s infinite;
-}
-
-main::-webkit-scrollbar {
-	display: none;
 }

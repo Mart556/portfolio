@@ -8,6 +8,8 @@ import {
 	SiMariadb,
 } from "react-icons/si";
 
+import { FaUserGraduate } from "react-icons/fa";
+
 const Schools = [
 	{
 		year: "2019 - 2022",
@@ -42,10 +44,20 @@ const About = () => {
 	return (
 		<div
 			id='about'
-			className='h-full py-12 md:py-20 mx-5 flex flex-col md:flex-row items-center justify-around gap-8 md:gap-0 text-textLight dark:text-textDark'
+			className='h-full py-12 md:py-20 flex flex-col md:flex-row items-center justify-around gap-8 md:gap-0 text-theme-primary'
 		>
+			<div className='flex flex-row justify-center items-center'>
+				<img
+					src='./mart.webp'
+					alt='Mart Haamer'
+					className='rounded w-80 md:w-120 shadow-lg object-contain border-2 border-accentDark/30 dark:border-accentDark/30'
+				/>
+			</div>
+
 			<div className='max-w-3xl px-4 md:px-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
-				<h2 className='text-3xl md:text-4xl font-bold mb-6'>About Me</h2>
+				<div className='flex items-center text-4xl font-semibold mb-12 text-textLight dark:text-textDark gap-3'>
+					<FaUserGraduate /> About Me
+				</div>
 
 				<p className='text-base md:text-lg text-textLight dark:text-textDark'>
 					I'm Mart Haamer, a passionate web developer with a knack for creating
@@ -97,14 +109,6 @@ const About = () => {
 						</div>
 					))}
 				</div>
-			</div>
-
-			<div className='flex flex-row justify-center items-center'>
-				<img
-					src='./mart.webp'
-					alt='Mart Haamer'
-					className='rounded w-80 md:w-120 shadow-lg object-contain border-2 border-accentDark/30 dark:border-accentDark/30'
-				/>
 			</div>
 		</div>
 	);

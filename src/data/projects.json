@@ -1,0 +1,65 @@
+[
+	{
+		"title": "VOCO SIM",
+		"description": "The game was created by a team of five during a school hackathon for the school's Open Doors Day.",
+		"tools": ["react", "node"],
+		"featured": true,
+		"gitLink": "https://github.com/ilmarIV/VOCO_SIM",
+		"previewImage": "/vocosim-preview.png",
+		"previewLink": "http://37.27.45.218:3420/"
+	},
+
+	{
+		"title": "GetScambo",
+		"description": "An game where player should learn to recognize scam emails. The game was created as a part of a school project.",
+		"tools": ["node", "database", "react"],
+		"featured": true,
+		"gitLink": "https://github.com/Mart556/getscambo",
+		"previewImage": "/getscambo-preview.webp",
+		"previewLink": "http://37.27.45.218:81"
+	},
+
+	{
+		"title": "VotingSys",
+		"description": "Simple web app what demostrate how voting system works. The app was created as a part of a school project.",
+		"tools": ["node", "database", "react"],
+		"featured": true,
+		"gitLink": "https://github.com/Mart556/votingsys",
+		"previewImage": "/votingsys-preview.png",
+		"previewLink": "http://37.27.45.218:3001"
+	},
+
+	{
+		"title": "FiveM Admin Panel",
+		"description": "Admin panel for FiveM servers that allows server admins to manage players, view logs, and perform various administrative tasks.",
+		"tools": ["lua", "database", "react"],
+		"featured": true,
+		"previewImage": "/adminpanel-preview.png"
+	},
+
+	{
+		"title": "FiveM MDT System",
+		"description": "MDT (Mobile Data Terminal) system for FiveM servers that allows law enforcement officers to access and manage information about vehicles, warrants, and other important data.",
+		"tools": ["lua", "database", "react"],
+		"featured": true,
+		"previewImage": "/mdt-preview.png"
+	},
+
+	{
+		"title": "To-Do App",
+		"description": "A simple To-Do app with a clean and minimalistic design. The app allows you to add, delete and filter tasks.",
+		"tools": ["html5", "css3", "vuejs"],
+		"featured": false,
+		"gitLink": "https://github.com/Mart556/lopuprojekt_v1",
+		"previewImage": "/todo-preview.webp"
+	},
+
+	{
+		"title": "Weather App",
+		"description": "App that allows user to search for any Estonian city and view its current weather. The app utilizes the OpenWeather API for retrieving weather data.",
+		"tools": ["html5", "css3", "js"],
+		"featured": false,
+		"gitLink": "https://github.com/Mart556/weather_express",
+		"previewImage": "/weather-app-preview.webp"
+	}
+]

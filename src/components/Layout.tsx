@@ -50,7 +50,7 @@ const Layout = ({ children }: LayoutProps) => {
 			<div className={`w-20 shrink-0  ${isMobile ? "hidden" : "block"}`} />
 
 			<main
-				className='flex-1 h-full overflow-auto md:mx-10 '
+				className='flex-1 h-full overflow-auto md:mx-15 '
 				style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
 			>
 				{children}

@@ -4,6 +4,7 @@ import { FaChevronDown } from "react-icons/fa";
 const Home = () => {
 	const [displayedText, setDisplayedText] = useState("");
 	const [isTransitioning, setIsTransitioning] = useState(false);
+	const [hasUserScrolled, setHasUserScrolled] = useState(false);
 
 	const slogans = useMemo(
 		() => ["/Junior Software Developer/", "I build things for the web.."],
@@ -49,19 +50,43 @@ const Home = () => {
 		};
 	}, [slogans]);
 
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 0) {
+				setHasUserScrolled(true);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll, { once: true });
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	useEffect(() => {
+		if (hasUserScrolled) return;
+
+		const timeout = setTimeout(() => {
+			const element = document.getElementById("about");
+			if (element && window.location.pathname === "/") {
+				element.scrollIntoView({ behavior: "smooth" });
+			}
+		}, 5000);
+
+		return () => clearTimeout(timeout);
+	}, [hasUserScrolled]);
+
 	return (
 		<div
 			id='home'
-			className='min-h-screen flex h-full flex-col items-center justify-center space-y-10 text-textDark dark:text-textDark'
+			className='min-h-screen flex h-full flex-col items-center justify-center space-y-10 text-theme-primary'
 		>
-			<h2 className='text-2xl sm:text-2xl md:text-4xl font-semibold text-secondaryDark dark:text-textDark/80'>
+			<h2 className='text-2xl sm:text-2xl md:text-4xl font-semibold text-theme-secondary'>
 				Hi, my name is
 			</h2>
-			<h1 className='text-5xl sm:text-5xl md:text-7xl font-bold text-secondaryDark dark:text-textDark text-nowrap'>
+			<h1 className='text-5xl sm:text-5xl md:text-7xl font-bold text-theme-primary text-nowrap'>
 				Mart Haamer.
 			</h1>
 			<h3
-				className={`text-xl sm:text-2xl md:text-3xl font-semibold text-secondaryDark dark:text-textDark/80 transition-opacity duration-1000 ${
+				className={`text-xl sm:text-2xl md:text-3xl font-semibold text-theme-secondary transition-opacity duration-1000 ${
 					isTransitioning ? "opacity-0" : "opacity-100"
 				}`}
 			>
@@ -70,7 +95,7 @@ const Home = () => {
 			</h3>{" "}
 			<div className='flex'>
 				<div className='flex flex-col items-center gap-1'>
-					<FaChevronDown className='scroll-arrow h-6 w-6 text-primaryDark dark:text-primaryLight' />
+					<FaChevronDown className='scroll-arrow h-6 w-6 text-theme-secondary' />
 				</div>
 			</div>
 		</div>
