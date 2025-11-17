@@ -163,7 +163,7 @@ const Projects = () => {
 
 		setTimeout(() => {
 			setHasAnimated(true);
-		}, ProjectsList.length * animationDuration);
+		}, (ProjectsList.length - 2) * animationDuration);
 
 		return () => {
 			setAnimatedCards(new Set());
@@ -175,19 +175,6 @@ const Projects = () => {
 			id='projects'
 			className='h-full py-20 mx-10 flex flex-col text-theme-primary'
 		>
-			<style>{`
-				@keyframes slideInUp {
-					from {
-						opacity: 0;
-						transform: translateY(40px);
-					}
-					to {
-						opacity: 1;
-						transform: translateY(0);
-					}
-				}
-			`}</style>
-
 			<h2 className='text-3xl md:text-4xl font-semibold mb-12 text-theme-primary flex items-center gap-3'>
 				<FaStar className=' text-yellow-300' /> Featured Projects
 			</h2>
@@ -211,7 +198,9 @@ const Projects = () => {
 
 				<div
 					className={`flex justify-center my-2 ${
-						hasAnimated ? "opacity-100" : "opacity-0"
+						hasAnimated
+							? "opacity-100 transition-opacity duration-1000"
+							: "opacity-0"
 					}`}
 				>
 					<a

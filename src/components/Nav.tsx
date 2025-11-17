@@ -52,12 +52,12 @@ const Nav = () => {
 			>
 				<FaTimes />
 			</button>
-			<ul className='space-y-10 p-6 text-theme-secondary'>
+			<ul className='space-y-10 p-6 text-theme-primary'>
 				{navItems.map((item) => (
 					<li key={item.label} className='flex justify-center'>
 						<button
 							onClick={scrollToSection(item.label, item.route)}
-							className='nav-link w-full text-center text-4xl font-bold px-4 py-3 bg-theme-secondary rounded-lg transition '
+							className='nav-link w-full text-center text-4xl font-bold px-4 py-3 rounded-lg transition text-shadow-md'
 						>
 							{item.label}
 						</button>

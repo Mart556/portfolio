@@ -46,8 +46,16 @@
 	},
 
 	{
+		"title": "FiveM Special Vehicles System",
+		"description": "Special Vehicles system for FiveM servers that allows players to see and buy their own vehicles.",
+		"tools": ["lua", "database", "react"],
+		"featured": true,
+		"previewImage": "/specialvehicles-preview.png"
+	},
+
+	{
 		"title": "To-Do App",
-		"description": "A simple To-Do app with a clean and minimalistic design. The app allows you to add, delete and filter tasks.",
+		"description": "A simple To-Do app with a clean and minimalistic design. The app allows you to add, delete and filter tasks. In private repository because of client request.",
 		"tools": ["html5", "css3", "vuejs"],
 		"featured": false,
 		"gitLink": "https://github.com/Mart556/lopuprojekt_v1",
