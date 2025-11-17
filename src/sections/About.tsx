@@ -58,18 +58,19 @@ const About = () => {
 				</div>
 
 				<p className='text-base md:text-lg text-textLight dark:text-textDark'>
-					I'm Mart Haamer, a passionate web developer with a knack for creating
-					dynamic and responsive web applications. With a strong foundation in
-					JavaScript and React, I enjoy bringing ideas to life through code.
+					My journey into tech started in 2018 on the FiveM platform. I
+					discovered a passion for coding by writing Lua scripts for my own
+					servers and for others in the community, and I was hooked. I still
+					contribute to the platform occasionally, doing FiveM scripting, and am
+					currently part of the development team for the Caprice Roleplay
+					server.
 					<br />
-					My journey into web development started during my studies, where I
-					discovered the power of building user-centric applications. Since
-					then, I've been honing my skills and staying updated with the latest
-					industry trends.
-					<br />
-					When I'm not coding, I love exploring new technologies, contributing
-					to open-source projects, and sharing knowledge with the developer
-					community. Let's build something amazing together!
+					After finishing high school and completing my military service, I knew
+					I wanted to turn that passion into a career. I enrolled in the Junior
+					Software Developer program at Tartu Vocational College to hone my
+					skills and build a foundation to enter the tech industry.
+					<br />I love exploring new technologies, contributing to open-source,
+					and sharing what I learn with the community.
 				</p>
 
 				<h3 className='text-xl md:text-2xl text-accentLight dark:text-textDark font-bold mb-6'>
