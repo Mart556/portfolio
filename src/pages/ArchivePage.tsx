@@ -36,7 +36,7 @@ const ArchiveList = () => {
 									href={project.gitLink}
 									target='_blank'
 									rel='noopener noreferrer'
-									className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium  text-theme-primary border-theme border-2 rounded-md hover:scale-105 transition-all whitespace-nowrap'
+									className='flex justify-end items-center gap-2 px-4 py-2 text-sm  font-medium  text-theme-primary md:border-theme md:border-2 md:rounded-md hover:scale-105 transition-all whitespace-nowrap'
 								>
 									<FaGithub />
 									GitHub

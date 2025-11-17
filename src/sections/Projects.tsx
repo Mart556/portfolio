@@ -148,7 +148,7 @@ const Projects = () => {
 				observer.unobserve(currentRef);
 			}
 		};
-	}, [isVisible]);
+	}, [isVisible, hasAnimated]);
 
 	useEffect(() => {
 		if (!isVisible) return;

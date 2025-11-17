@@ -8,8 +8,6 @@ import {
 	SiMariadb,
 } from "react-icons/si";
 
-import { FaUserGraduate } from "react-icons/fa";
-
 const Schools = [
 	{
 		year: "2019 - 2022",
@@ -56,7 +54,7 @@ const About = () => {
 
 			<div className='max-w-3xl px-4 md:px-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
 				<div className='flex items-center text-4xl font-semibold mb-12 text-textLight dark:text-textDark gap-3'>
-					<FaUserGraduate /> About Me
+					About Me
 				</div>
 
 				<p className='text-base md:text-lg text-textLight dark:text-textDark'>
