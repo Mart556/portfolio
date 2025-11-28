@@ -42,17 +42,17 @@ const About = () => {
 	return (
 		<div
 			id='about'
-			className='h-full py-12 md:py-20 flex flex-col md:flex-row items-center justify-around gap-8 md:gap-0 text-theme-primary'
+			className='h-full py-12 md:py-20 flex flex-col xl:flex-row items-center justify-around gap-8 xl:gap-0 text-theme-primary'
 		>
 			<div className='flex flex-row justify-center items-center'>
 				<img
 					src='./mart.webp'
 					alt='Mart Haamer'
-					className='rounded w-80 md:w-120 shadow-lg object-contain border-2 border-accentDark/30 dark:border-accentDark/30'
+					className='rounded w-80 sm:w-100  xl:w-120 shadow-lg object-contain border-2 border-accentDark/30 dark:border-accentDark/30'
 				/>
 			</div>
 
-			<div className='max-w-3xl px-4 md:px-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
+			<div className='max-w-3xl px-4 xl:px-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
 				<div className='flex items-center text-4xl font-semibold mb-12 text-textLight dark:text-textDark gap-3'>
 					About Me
 				</div>

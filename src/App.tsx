@@ -30,7 +30,6 @@ export default function App() {
 	useEffect(() => {
 		const handleMouseMove = (e: MouseEvent) => {
 			const spotlight = document.getElementById("spotlight");
-			console.log(spotlight);
 			if (spotlight) {
 				spotlight.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(29, 78, 216, 0.15), transparent 60%)`;
 			}
@@ -54,7 +53,7 @@ export default function App() {
 					width: "100vw",
 					height: "100vh",
 					pointerEvents: "none",
-					zIndex: 9999,
+					zIndex: -1,
 				}}
 			/>
 			<RouterProvider router={router} />
