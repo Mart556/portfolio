@@ -1,10 +1,9 @@
 import { useEffect, useState, useMemo } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import { FiChevronsDown } from "react-icons/fi";
 
 const Home = () => {
 	const [displayedText, setDisplayedText] = useState("");
 	const [isTransitioning, setIsTransitioning] = useState(false);
-	const [hasUserScrolled, setHasUserScrolled] = useState(false);
 
 	const slogans = useMemo(
 		() => ["/Junior Software Developer/", "I build things for the web.."],
@@ -50,30 +49,6 @@ const Home = () => {
 		};
 	}, [slogans]);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 0) {
-				setHasUserScrolled(true);
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll, { once: true });
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
-
-	useEffect(() => {
-		if (hasUserScrolled) return;
-
-		const timeout = setTimeout(() => {
-			const element = document.getElementById("about");
-			if (element && window.location.pathname === "/") {
-				element.scrollIntoView({ behavior: "smooth" });
-			}
-		}, 5000);
-
-		return () => clearTimeout(timeout);
-	}, [hasUserScrolled]);
-
 	return (
 		<div
 			id='home'
@@ -95,7 +70,7 @@ const Home = () => {
 			</h3>{" "}
 			<div className='flex'>
 				<div className='flex flex-col items-center gap-1'>
-					<FaChevronDown className='scroll-arrow h-6 w-6 text-theme-secondary' />
+					<FiChevronsDown className='scroll-arrow h-12 w-12 text-theme-secondary' />
 				</div>
 			</div>
 		</div>

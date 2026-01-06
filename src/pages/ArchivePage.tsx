@@ -3,7 +3,7 @@ import SideBars from "../components/SideBars.tsx";
 
 import ProjectsList from "../data/projects.json";
 import type { DataType } from "../types/projects.ts";
-import { FaGithub, FaStar } from "react-icons/fa6";
+import { FaGithub, FaStar } from "react-icons/fa";
 
 const ArchiveList = () => {
 	return (
@@ -19,10 +19,12 @@ const ArchiveList = () => {
 
 			<div className='w-full md:max-w-7xl p-2 '>
 				<ul className='space-y-3'>
-					{ProjectsList.map((project: DataType, index: number) => (
+					{ProjectsList.sort((a, b) =>
+						a.featured === b.featured ? 0 : a.featured ? -1 : 1
+					).map((project: DataType, index: number) => (
 						<li
 							key={index}
-							className='group bg-theme-secondary flex flex-col mx-5 sm:flex-row sm:items-center sm:justify-between gap-3 p-4 sm:p-5 border-theme border rounded-lg  transition-all duration-300 backdrop-blur-sm'
+							className='group bg-theme-secondary flex flex-col mx-5 sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-5 sm:py-4 border-theme border rounded-lg  transition-all duration-300 backdrop-blur-sm'
 						>
 							<div className='flex-1 min-w-0'>
 								<div className='flex justify-between items-center'>
@@ -37,9 +39,9 @@ const ArchiveList = () => {
 											href={project.gitLink}
 											target='_blank'
 											rel='noopener noreferrer'
-											className='flex justify-end items-center gap-2 px-2 py-2 text-xl font-medium  text-theme-primary md:border-theme md:border-2 md:rounded-md  whitespace-nowrap'
+											className='flex justify-end items-center gap-2 text-xl font-medium  text-theme-primary whitespace-nowrap'
 										>
-											<FaGithub />
+											<FaGithub className='h-6 w-6' />
 										</a>
 									)}
 								</div>

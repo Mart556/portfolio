@@ -1,3 +1,5 @@
+import Tilt from "react-parallax-tilt";
+
 import {
 	SiJavascript,
 	SiTypescript,
@@ -6,6 +8,7 @@ import {
 	SiReact,
 	SiNodedotjs,
 	SiMariadb,
+	SiLua,
 } from "react-icons/si";
 
 const Schools = [
@@ -31,6 +34,10 @@ const Skills = [
 		name: "TypeScript",
 		icon: <SiTypescript className='text-sky-500 w-6 h-6' />,
 	},
+	{
+		name: "Lua",
+		icon: <SiLua className='text-sky-500 w-6 h-6' />,
+	},
 	{ name: "HTML", icon: <SiHtml5 className='text-orange-600 w-6 h-6' /> },
 	{ name: "CSS", icon: <SiCss3 className='text-blue-600 w-6 h-6' /> },
 	{ name: "React", icon: <SiReact className='text-cyan-400 w-6 h-6' /> },
@@ -45,11 +52,13 @@ const About = () => {
 			className='h-full py-12 md:py-20 flex flex-col xl:flex-row items-center justify-around gap-8 xl:gap-0 text-theme-primary'
 		>
 			<div className='flex flex-row justify-center items-center'>
-				<img
-					src='./mart.webp'
-					alt='Mart Haamer'
-					className='rounded w-80 sm:w-100  xl:w-120 shadow-lg object-contain border-2 border-accentDark/30 dark:border-accentDark/30'
-				/>
+				<Tilt tiltReverse={true} glareEnable={true} glareMaxOpacity={0.3}>
+					<img
+						src='./mart.webp'
+						alt='Mart Haamer'
+						className='rounded w-80 sm:w-100  xl:w-120 shadow-lg object-contain border-2 border-accentDark/30 dark:border-accentDark/30'
+					/>
+				</Tilt>
 			</div>
 
 			<div className='max-w-3xl px-4 xl:px-6 space-y-6 md:max-w-xl lg:max-w-3xl '>

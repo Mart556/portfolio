@@ -1,5 +1,5 @@
 import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/theme/useTheme";
 
 const ThemeToggle = () => {
 	const { isDark, toggleTheme } = useTheme();

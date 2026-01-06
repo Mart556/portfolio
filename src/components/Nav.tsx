@@ -74,61 +74,6 @@ const Nav = () => {
 				<img src='./logo.svg' alt='Logo' className='h-10' />
 			</div>
 
-			<style>{`
-				@keyframes underline-expand {
-					from {
-						width: 0;
-						left: 50%;
-					}
-					to {
-						width: 100%;
-						left: 0;
-					}
-				}
-
-				.nav-link {
-					position: relative;
-					display: inline-block;
-					color: inherit;
-					font-weight: 700;
-					font-size: 1.25rem;
-					cursor: pointer;
-					transition: color 0.3s ease;
-				}
-
-				.nav-link::after {
-					content: '';
-					position: absolute;
-					bottom: -2px;
-					left: 50%;
-					width: 0;
-					height: 2px;
-					background-color: #06b6d4;
-					transition: all 0.3s ease;
-				}
-
-				.nav-link:hover::after {
-					animation: underline-expand 0.3s ease forwards;
-				}
-
-
-				.mobile-menu {
-					animation: slideDown 0.3s ease forwards;
-					
-				}
-
-				@keyframes slideDown {
-					from {
-						opacity: 0;
-						transform: translateY(-10px);
-					}
-					to {
-						opacity: 1;
-						transform: translateY(0);
-					}
-				}
-			`}</style>
-
 			<ul className='space-x-8 justify-end hidden md:flex items-center'>
 				{navItems.map((item) => (
 					<li key={item.label}>
