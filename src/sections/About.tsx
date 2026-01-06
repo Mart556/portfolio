@@ -10,6 +10,7 @@ import {
 	SiMariadb,
 	SiLua,
 } from "react-icons/si";
+import { useRef, useState } from "react";
 
 const Schools = [
 	{
@@ -46,19 +47,42 @@ const Skills = [
 ];
 
 const About = () => {
+	const [showEasterEgg, setShowEasterEgg] = useState(false);
+	const easterEggClickRef = useRef(0);
+
 	return (
 		<div
 			id='about'
 			className='h-full py-12 md:py-20 flex flex-col xl:flex-row items-center justify-around gap-8 xl:gap-0 text-theme-primary'
 		>
 			<div className='flex flex-row justify-center items-center'>
-				<Tilt tiltReverse={true} glareEnable={true} glareMaxOpacity={0.3}>
-					<img
-						src='./mart.webp'
-						alt='Mart Haamer'
-						className='rounded w-80 sm:w-100  xl:w-120 shadow-lg object-contain border-2 border-accentDark/30 dark:border-accentDark/30'
-					/>
-				</Tilt>
+				{showEasterEgg ? (
+					<video
+						src='./mart_easter_vid.mp4'
+						className='rounded w-80 sm:w-100 xl:w-120'
+						autoPlay
+						muted
+						playsInline
+						onEnded={() => {
+							setShowEasterEgg(false);
+							easterEggClickRef.current = 0;
+						}}
+					></video>
+				) : (
+					<Tilt tiltReverse={true} glareEnable={true} glareMaxOpacity={0.3}>
+						<img
+							src='./mart.webp'
+							alt='Mart Haamer'
+							className='rounded w-80 sm:w-100  xl:w-120 shadow-lg object-contain border-2 border-accentDark/30 dark:border-accentDark/30'
+							onClick={() => {
+								easterEggClickRef.current += 1;
+								if (easterEggClickRef.current >= 7) {
+									setShowEasterEgg(true);
+								}
+							}}
+						/>
+					</Tilt>
+				)}
 			</div>
 
 			<div className='max-w-3xl px-4 xl:px-6 space-y-6 md:max-w-xl lg:max-w-3xl '>
