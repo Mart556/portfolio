@@ -45,7 +45,7 @@ const ProjectCard = ({
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.1 }}
 			transition={{ duration: 0.5, delay: index * 0.15 }}
-			className="group bg-theme-secondary relative h-96 overflow-hidden rounded-lg shadow-lg transition-colors duration-300 border-2 dark:border-cyan-800 border-primaryDark  text-left"
+			className="group bg-theme-secondary relative h-96 overflow-hidden rounded-lg shadow-lg transition-colors duration-300 border-2 dark:border-cyan-800 border-primaryDark text-[#9be3e2] text-left"
 			onClick={() => {}}
 		>
 			<motion.div
@@ -57,7 +57,7 @@ const ProjectCard = ({
 					alt={project.title}
 					className="h-full w-full object-cover"
 				/>
-				<div className="absolute inset-0 bg-black/50 backdrop-blur-xs" />
+				<div className="absolute inset-0 dark:bg-black/50 bg-black/30 backdrop-blur-xs" />
 			</motion.div>
 
 			<div className="relative z-10 flex h-full flex-col justify-between p-6 ">
