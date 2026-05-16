@@ -1,6 +1,6 @@
-import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 import ThemeToggle from "./ThemeToggle";
 
@@ -12,6 +12,7 @@ const Nav = () => {
 		{ label: "Home", route: "/" },
 		{ label: "About", route: "/" },
 		{ label: "Projects", route: "/" },
+		{ label: "Experience", route: "/" },
 		{ label: "Contact", route: "/" },
 		{ label: "Archive", route: "/archive" },
 	];
@@ -45,54 +46,54 @@ const Nav = () => {
 	};
 
 	return isMenuOpen ? (
-		<div className='mobile-menu fixed inset-0 flex flex-col justify-center items-center z-50 md:hidden backdrop-blur-lg '>
+		<div className="mobile-menu fixed inset-0 flex flex-col justify-center items-center z-50 md:hidden backdrop-blur-lg ">
 			<button
 				onClick={handleToggleMenu}
-				className='absolute top-6 right-6 text-4xl text-theme-primary active:animate-spin'
+				className="absolute top-6 right-6 text-4xl text-theme-primary active:animate-spin"
 			>
 				<FaTimes />
 			</button>
-			<ul className='space-y-10 p-6 text-theme-primary'>
+			<ul className="space-y-10 p-6 text-theme-primary">
 				{navItems.map((item) => (
-					<li key={item.label} className='flex justify-center'>
+					<li key={item.label} className="flex justify-center">
 						<button
 							onClick={scrollToSection(item.label, item.route)}
-							className='nav-link w-full text-center text-4xl font-bold px-4 py-3 rounded-lg transition text-shadow-md'
+							className="nav-link w-full text-center text-4xl font-bold px-4 py-3 rounded-lg transition text-shadow-md"
 						>
 							{item.label}
 						</button>
 					</li>
 				))}
-				<li className='flex justify-center'>
+				<li className="flex justify-center">
 					<ThemeToggle />
 				</li>
 			</ul>
 		</div>
 	) : (
-		<nav className='p-4 flex flex-row justify-between items-center z-50 fixed w-full dark:bg-white/5 bg-black/5 backdrop-blur-md border-b border-cyan-400/10  dark:border-cyan-400/10 bg-opacity-90 dark:bg-opacity-5'>
-			<div className='flex flex-end'>
-				<img src='./logo.svg' alt='Logo' className='h-10' />
+		<nav className="p-4 flex flex-row justify-between items-center z-50 fixed w-full dark:bg-white/5 bg-black/5 backdrop-blur-md border-b border-cyan-400/10  dark:border-cyan-400/10 bg-opacity-90 dark:bg-opacity-5">
+			<div className="flex flex-end">
+				<img src="./logo.svg" alt="Logo" className="h-10" />
 			</div>
 
-			<ul className='space-x-8 justify-end hidden md:flex items-center'>
+			<ul className="space-x-8 justify-end hidden md:flex items-center">
 				{navItems.map((item) => (
 					<li key={item.label}>
 						<button
 							onClick={scrollToSection(item.label, item.route)}
-							className='nav-link'
+							className="nav-link"
 						>
 							{item.label}
 						</button>
 					</li>
 				))}
-				<li className='flex items-center underline-offset-0'>
+				<li className="flex items-center underline-offset-0">
 					<ThemeToggle />
 				</li>
 			</ul>
 
-			<div className='md:hidden flex flex-col items-center'>
-				<button onClick={handleToggleMenu} className='nav-link'>
-					<FaBars className='text-3xl' />
+			<div className="md:hidden flex flex-col items-center">
+				<button onClick={handleToggleMenu} className="nav-link">
+					<FaBars className="text-3xl" />
 				</button>
 			</div>
 		</nav>

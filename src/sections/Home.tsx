@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FiChevronsDown } from "react-icons/fi";
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
 
 	const slogans = useMemo(
 		() => ["/Junior Software Developer/", "I build things for the web.."],
-		[]
+		[],
 	);
 
 	useEffect(() => {
@@ -19,6 +19,8 @@ const Home = () => {
 
 		const type = () => {
 			const currentText = slogans[currentTextIndex];
+
+			if (!currentText) return;
 
 			if (charIndex < currentText.length) {
 				setDisplayedText(currentText.substring(0, charIndex + 1));
@@ -51,13 +53,13 @@ const Home = () => {
 
 	return (
 		<div
-			id='home'
-			className='min-h-screen flex h-full flex-col items-center justify-center space-y-10 text-theme-primary'
+			id="home"
+			className="min-h-screen flex h-full flex-col items-center justify-center space-y-10 text-theme-primary"
 		>
-			<h2 className='text-2xl sm:text-2xl md:text-4xl font-semibold text-theme-secondary'>
+			<h2 className="text-2xl sm:text-2xl md:text-4xl font-semibold text-theme-secondary">
 				Hi, my name is
 			</h2>
-			<h1 className='text-5xl sm:text-5xl md:text-7xl font-bold text-theme-primary text-nowrap'>
+			<h1 className="text-5xl sm:text-5xl md:text-7xl font-bold text-theme-primary text-nowrap">
 				Mart Haamer.
 			</h1>
 			<h3
@@ -66,11 +68,11 @@ const Home = () => {
 				}`}
 			>
 				{displayedText}
-				<span className='animate-pulse'>|</span>
+				<span className="animate-pulse">|</span>
 			</h3>{" "}
-			<div className='flex'>
-				<div className='flex flex-col items-center gap-1'>
-					<FiChevronsDown className='scroll-arrow h-12 w-12 text-theme-secondary' />
+			<div className="flex">
+				<div className="flex flex-col items-center gap-1">
+					<FiChevronsDown className="scroll-arrow h-12 w-12 text-theme-secondary" />
 				</div>
 			</div>
 		</div>

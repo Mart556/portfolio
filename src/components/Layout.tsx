@@ -23,7 +23,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 					return;
 				}
 
-				const currentTime = new Date().getTime();
+				const currentTime = Date.now();
 				if (currentTime - lastClickTime < 1000) {
 					return;
 				}
@@ -48,7 +48,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 				}, 1000);
 			},
 
-			{ signal: controller.signal }
+			{ signal: controller.signal },
 		);
 
 		return () => {
@@ -57,17 +57,21 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 	}, []);
 
 	return (
-		<div className='flex w-full'>
-			<div className={`w-20 shrink-0  ${isMobile ? "hidden" : "block"}`} />
+		<div className="flex w-full">
+			<div
+				className={`w-20 shrink-0  ${isMobile ? "hidden" : "block"}`}
+			/>
 
 			<main
-				className='flex-1 h-full overflow-auto md:mx-15 '
+				className="flex-1 h-full overflow-auto md:mx-15 "
 				style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
 			>
 				{children}
 			</main>
 
-			<div className={`w-20 shrink-0  ${isMobile ? "hidden" : "block"}`} />
+			<div
+				className={`w-20 shrink-0  ${isMobile ? "hidden" : "block"}`}
+			/>
 		</div>
 	);
 };

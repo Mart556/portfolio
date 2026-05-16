@@ -1,12 +1,19 @@
 [
 	{
+		"title": "Minu Kataster",
+		"description": "A GIS project developed for cadastral officials to enhance their workflow by integrating ETAK calculations for cadastral boundary updates.",
+		"tools": ["react"],
+		"featured": true,
+		"previewImage": "/kataster-preview.png"
+	},
+
+	{
 		"title": "VOCO SIM",
 		"description": "The game was created by a team of five during a school hackathon for the school's Open Doors Day.",
 		"tools": ["react", "node"],
 		"featured": true,
 		"gitLink": "https://github.com/ilmarIV/VOCO_SIM",
-		"previewImage": "/vocosim-preview.png",
-		"previewLink": "http://37.27.45.218:3420/"
+		"previewImage": "/vocosim-preview.png"
 	},
 
 	{
@@ -15,8 +22,7 @@
 		"tools": ["node", "database", "react"],
 		"featured": true,
 		"gitLink": "https://github.com/Mart556/getscambo",
-		"previewImage": "/getscambo-preview.webp",
-		"previewLink": "http://37.27.45.218:81"
+		"previewImage": "/getscambo-preview.webp"
 	},
 
 	{
@@ -34,8 +40,7 @@
 		"tools": ["node", "database", "react"],
 		"featured": false,
 		"gitLink": "https://github.com/Mart556/votingsys",
-		"previewImage": "/votingsys-preview.png",
-		"previewLink": "http://37.27.45.218:3001"
+		"previewImage": "/votingsys-preview.png"
 	},
 
 	{
@@ -58,7 +63,7 @@
 		"title": "FiveM Special Vehicles System",
 		"description": "Special Vehicles system for FiveM servers that allows players to see and buy their ordered vehicles.",
 		"tools": ["lua", "database", "react"],
-		"featured": true,
+		"featured": false,
 		"previewImage": "/specialvehicles-preview.png"
 	},
 

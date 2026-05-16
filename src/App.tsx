@@ -4,10 +4,9 @@ import {
 	createRouter,
 	RouterProvider,
 } from "@tanstack/react-router";
-
-import MainPage from "./pages/MainPage.tsx";
-import ArchivePage from "./pages/ArchivePage.tsx";
 import { useEffect } from "react";
+import ArchivePage from "./pages/ArchivePage";
+import MainPage from "./pages/MainPage";
 
 const rootRoute = createRootRoute();
 
@@ -45,7 +44,7 @@ export default function App() {
 	return (
 		<>
 			<div
-				id='spotlight'
+				id="spotlight"
 				style={{
 					position: "fixed",
 					top: 0,
@@ -59,6 +58,4 @@ export default function App() {
 			<RouterProvider router={router} />
 		</>
 	);
-
-	return <RouterProvider router={router} />;
 }

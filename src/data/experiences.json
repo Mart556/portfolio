@@ -1,0 +1,24 @@
+[
+	{
+		"company": "Maribel Media OÜ",
+		"role": "Web Developer Intern",
+		"description": "Assisted in developing and maintaining client websites, focusing on responsive design and content management systems to improve user engagement.",
+		"internship": true,
+		"location": "Remote",
+		"skills": ["WordPress", "HTML5", "CSS3", "JavaScript", "PHP"],
+		"startDate": "2025-04-07",
+		"endDate": "2025-06-01",
+		"webLink": ""
+	},
+	{
+		"company": "Positium OÜ",
+		"role": "Junior Software Engineer Intern",
+		"description": "Collaborated with the engineering team to process and visualize mobile positioning data, contributing to scalable location intelligence solutions.",
+		"internship": true,
+		"location": "Tartu (Hybrid)",
+		"skills": ["GIS", "React"],
+		"startDate": "2026-01-26",
+		"endDate": "2026-05-03",
+		"webLink": "https://positium.com/"
+	}
+]

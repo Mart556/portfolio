@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactNode } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import { ThemeContext } from "./theme-context";
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 			setIsDark(savedTheme === "dark");
 		} else {
 			const prefersDark = window.matchMedia(
-				"(prefers-color-scheme: dark)"
+				"(prefers-color-scheme: dark)",
 			).matches;
 			setIsDark(prefersDark);
 		}

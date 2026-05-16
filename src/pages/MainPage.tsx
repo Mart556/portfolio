@@ -1,11 +1,11 @@
-import Nav from "../components/Nav.tsx";
-import SideBars from "../components/SideBars.tsx";
-import Layout from "../components/Layout.tsx";
-
-import Home from "../sections/Home.tsx";
-import About from "../sections/About.tsx";
-import Projects from "../sections/Projects.tsx";
-import Contact from "../sections/Contact.tsx";
+import Layout from "../components/Layout";
+import Nav from "../components/Nav";
+import SideBars from "../components/SideBars";
+import About from "../sections/About";
+import Contact from "../sections/Contact";
+import Experience from "../sections/Experience";
+import Home from "../sections/Home";
+import Projects from "../sections/Projects";
 
 const MainPage = () => {
 	return (
@@ -17,6 +17,7 @@ const MainPage = () => {
 				<Home />
 				<About />
 				<Projects />
+				<Experience />
 				<Contact />
 			</Layout>
 		</>
