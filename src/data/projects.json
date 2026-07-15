@@ -1,5 +1,16 @@
 [
 	{
+		"title": "Tuff Roleplay",
+		"description": "A live FiveM roleplay server I'm actively developing, with custom Lua scripts, an in-house admin panel and MDT, and a growing community of active players.",
+		"tools": ["lua", "database", "react"],
+		"featured": true,
+		"previewLink": "https://tuffrp.ee",
+		"previewImage": "/tuffrp-preview.webp",
+		"playersEndpoint": "/api/tuffrp-players",
+		"logo": "/tuffrp-logo.webp"
+	},
+
+	{
 		"title": "Minu Kataster",
 		"description": "A GIS project developed for cadastral officials to enhance their workflow by integrating ETAK calculations for cadastral boundary updates.",
 		"tools": ["react"],

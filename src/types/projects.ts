@@ -6,4 +6,6 @@ export type DataType = {
 	gitLink?: string;
 	previewImage: string;
 	previewLink?: string;
+	playersEndpoint?: string;
+	logo?: string;
 };

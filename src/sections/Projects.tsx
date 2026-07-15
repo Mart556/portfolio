@@ -14,6 +14,7 @@ import {
 	FaVuejs,
 } from "react-icons/fa";
 import { SiLua } from "react-icons/si";
+import LivePlayerCount from "../components/LivePlayerCount.tsx";
 import ProjectsList from "../data/projects.json" with { type: "json" };
 import type { DataType } from "../types/projects.ts";
 
@@ -60,9 +61,24 @@ const ProjectCard = ({
 				<div className="absolute inset-0 dark:bg-black/50 bg-black/30 backdrop-blur-xs" />
 			</motion.div>
 
+			{project.playersEndpoint && (
+				<div className="absolute top-4 right-4 z-10">
+					<LivePlayerCount endpoint={project.playersEndpoint} />
+				</div>
+			)}
+
 			<div className="relative z-10 flex h-full flex-col justify-between p-6 ">
 				<div>
-					<h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+					<div className="flex items-center gap-2 mb-3">
+						{project.logo && (
+							<img
+								src={project.logo}
+								alt=""
+								className="h-8 w-8 object-contain"
+							/>
+						)}
+						<h3 className="text-2xl font-bold">{project.title}</h3>
+					</div>
 					<p className="text-sm line-clamp-3">
 						{project.description}
 					</p>

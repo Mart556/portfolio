@@ -20,7 +20,7 @@ const Schools = [
 	},
 
 	{
-		year: "2023 - Present",
+		year: "2024 - 2026",
 		degree: "Full Stack Web Development",
 		institution: "Tartu Vocational College",
 	},
