@@ -1,21 +1,21 @@
 [
 	{
-		"title": "Tuff Roleplay",
-		"description": "A live FiveM roleplay server I'm actively developing, with custom Lua scripts, an in-house admin panel and MDT, and a growing community of active players.",
+		"title": "Minu Kataster",
+		"description": "A GIS project developed for cadastral officials to enhance their workflow by integrating ETAK calculations for cadastral boundary updates.",
+		"tools": ["react"],
+		"featured": true,
+		"previewImage": "/kataster-preview.png"
+	},
+
+	{
+		"title": "TUFF Roleplay",
+		"description": "A live FiveM roleplay server I'm actively developing with my free time. Growing community of active players.",
 		"tools": ["lua", "database", "react"],
 		"featured": true,
 		"previewLink": "https://tuffrp.ee",
 		"previewImage": "/tuffrp-preview.webp",
 		"playersEndpoint": "/api/tuffrp-players",
 		"logo": "/tuffrp-logo.webp"
-	},
-
-	{
-		"title": "Minu Kataster",
-		"description": "A GIS project developed for cadastral officials to enhance their workflow by integrating ETAK calculations for cadastral boundary updates.",
-		"tools": ["react"],
-		"featured": true,
-		"previewImage": "/kataster-preview.png"
 	},
 
 	{
@@ -55,7 +55,7 @@
 	},
 
 	{
-		"title": "FiveM Admin Panel",
+		"title": "Admin panel",
 		"description": "Admin panel for FiveM servers that allows server admins to manage players, view logs, and perform various administrative tasks.",
 		"tools": ["lua", "database", "react"],
 		"featured": true,
@@ -66,7 +66,7 @@
 		"title": "FiveM MDT System",
 		"description": "MDT (Mobile Data Terminal) system for FiveM servers that allows law enforcement officers to access and manage information about vehicles, warrants, and other important data.",
 		"tools": ["lua", "database", "react"],
-		"featured": true,
+		"featured": false,
 		"previewImage": "/mdt-preview.png"
 	},
 
