@@ -15,6 +15,15 @@ const SideBars = () => {
 						<FaGithub />
 					</a>
 					<a
+						href="https://www.linkedin.com/in/mart-haamer"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center justify-center w-12 h-12 rounded-lg dark:text-cyan-400 text-2xl transition-all duration-300 bg-cyan-800/20 dark:bg-cyan-400/10 border-2 border-transparent dark:hover:text-white dark:hover:bg-cyan-400/20 dark:hover:border-cyan-400 hover:-translate-y-1"
+						title="LinkedIn"
+					>
+						<FaLinkedin />
+					</a>
+					<a
 						href="https://dev.to"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -22,15 +31,6 @@ const SideBars = () => {
 						title="Dev.to"
 					>
 						<FaDev />
-					</a>
-					<a
-						href="https://linkedin.com"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="flex items-center justify-center w-12 h-12 rounded-lg dark:text-cyan-400 text-2xl transition-all duration-300 bg-cyan-800/20 dark:bg-cyan-400/10 border-2 border-transparent dark:hover:text-white dark:hover:bg-cyan-400/20 dark:hover:border-cyan-400 hover:-translate-y-1"
-						title="LinkedIn"
-					>
-						<FaLinkedin />
 					</a>
 					<div className="w-0.5 h-24 bg-linear-to-b dark:from-cyan-400 from-cyan-800 to-transparent mt-5"></div>
 				</div>

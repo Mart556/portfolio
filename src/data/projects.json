@@ -9,7 +9,7 @@
 
 	{
 		"title": "TUFF Roleplay",
-		"description": "A live FiveM roleplay server I'm actively developing with my free time. Growing community of active players.",
+		"description": "An active FiveM roleplay server featuring custom gameplay systems. Continuously maintained and updated to support a dedicated live community.",
 		"tools": ["lua", "database", "react"],
 		"featured": true,
 		"previewLink": "https://tuffrp.ee",
